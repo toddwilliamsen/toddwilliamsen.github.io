@@ -1,0 +1,651 @@
+/* Todd Williamsen — site styles
+   Direction: cool steel blueprint, ink type, copper accent */
+
+:root {
+  --ink: #101820;
+  --ink-soft: #3d4a5c;
+  --mute: #6b7a8d;
+  --paper: #ebeff4;
+  --paper-2: #dde4ec;
+  --line: rgba(16, 24, 32, 0.12);
+  --line-strong: rgba(16, 24, 32, 0.22);
+  --copper: #9a4e1a;
+  --copper-deep: #7a3b12;
+  --white: #f7f9fb;
+  --max: 72rem;
+  --measure: 40rem;
+  --header-h: 4.25rem;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-optical-sizing: auto;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  background:
+    radial-gradient(120% 80% at 100% -10%, rgba(154, 78, 26, 0.08), transparent 55%),
+    radial-gradient(90% 70% at -15% 20%, rgba(70, 110, 150, 0.16), transparent 50%),
+    linear-gradient(180deg, #f4f7fa 0%, var(--paper) 42%, var(--paper-2) 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 20%, transparent 75%);
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--copper-deep);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+a:hover {
+  color: var(--copper);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.5rem 0.75rem;
+  background: var(--ink);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.shell {
+  width: min(100% - 2.5rem, var(--max));
+  margin-inline: auto;
+}
+
+/* Header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+  background: rgba(235, 239, 244, 0.78);
+  border-bottom: 1px solid transparent;
+  transition: border-color 240ms ease, background 240ms ease;
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--line);
+  background: rgba(235, 239, 244, 0.92);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-h);
+  gap: 1.5rem;
+}
+
+.wordmark {
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.wordmark:hover {
+  color: var(--ink);
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--ink);
+}
+
+/* Home hero */
+
+.hero {
+  position: relative;
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(3.5rem, 9vw, 6.5rem) 0 clamp(3.25rem, 7vw, 5rem);
+  overflow: hidden;
+}
+
+.hero-plane {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(244, 247, 250, 0.18) 0%, rgba(235, 239, 244, 0.88) 58%, var(--paper) 100%),
+    repeating-linear-gradient(
+      -18deg,
+      transparent,
+      transparent 14px,
+      rgba(16, 24, 32, 0.03) 14px,
+      rgba(16, 24, 32, 0.03) 15px
+    );
+}
+
+.hero-plane::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(55% 50% at 78% 35%, rgba(154, 78, 26, 0.14), transparent 70%),
+    linear-gradient(90deg, rgba(235, 239, 244, 0.92) 0%, rgba(235, 239, 244, 0.55) 42%, rgba(235, 239, 244, 0.15) 100%);
+  pointer-events: none;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 36rem;
+}
+
+.brand {
+  margin: 0 0 1.25rem;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.85rem, 8vw, 5.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+.hero-support {
+  margin: 0 0 2rem;
+  max-width: 32rem;
+  color: var(--ink-soft);
+  font-size: 1.125rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.25rem;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 2px;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms var(--ease);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--white);
+  border: 1px solid var(--ink);
+}
+
+.btn-primary:hover {
+  background: var(--copper-deep);
+  border-color: var(--copper-deep);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: rgba(247, 249, 251, 0.55);
+  color: var(--ink-soft);
+  border: 1px solid var(--line-strong);
+  backdrop-filter: blur(6px);
+}
+
+.btn-ghost:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.diagram {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+.diagram text {
+  fill: var(--ink-soft);
+  font-family: Syne, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.diagram .wire {
+  fill: none;
+  stroke: rgba(16, 24, 32, 0.28);
+  stroke-width: 1.5;
+}
+
+.diagram .node {
+  fill: rgba(247, 249, 251, 0.72);
+  stroke: rgba(16, 24, 32, 0.4);
+  stroke-width: 1.5;
+}
+
+.diagram .accent {
+  stroke: var(--copper);
+  fill: none;
+  stroke-width: 2;
+}
+
+.diagram .pulse {
+  stroke-dasharray: 8 12;
+  animation: dash 8s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -160;
+  }
+}
+
+/* Sections */
+
+.section {
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+
+.section-head {
+  max-width: 36rem;
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+}
+
+.section-label {
+  margin: 0 0 0.65rem;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.section-head h2 {
+  margin: 0 0 0.75rem;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.4vw, 2.35rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+/* Writing list */
+
+.writing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.writing-item a {
+  display: grid;
+  gap: 0.35rem 1.5rem;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  transition: padding-left 220ms var(--ease);
+}
+
+@media (min-width: 720px) {
+  .writing-item a {
+    grid-template-columns: 7.5rem minmax(0, 1fr) auto;
+    align-items: baseline;
+  }
+}
+
+.writing-item a:hover {
+  padding-left: 0.35rem;
+}
+
+.writing-topic {
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.writing-title {
+  margin: 0;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.writing-item a:hover .writing-title {
+  color: var(--copper-deep);
+}
+
+.writing-blurb {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+@media (min-width: 720px) {
+  .writing-blurb {
+    grid-column: 2;
+  }
+
+  .writing-arrow {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+}
+
+.writing-arrow {
+  font-family: Syne, sans-serif;
+  font-weight: 700;
+  color: var(--mute);
+  transition: transform 220ms var(--ease), color 180ms ease;
+}
+
+.writing-item a:hover .writing-arrow {
+  color: var(--copper);
+  transform: translateX(4px);
+}
+
+/* Focus */
+
+.focus-copy {
+  max-width: 42rem;
+}
+
+.focus-copy p {
+  margin: 0 0 1.1rem;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+
+.focus-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.focus-copy strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Article pages */
+
+.article-hero {
+  padding: clamp(3rem, 8vw, 5rem) 0 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.eyebrow a {
+  color: var(--copper-deep);
+  text-decoration: none;
+}
+
+.eyebrow a:hover {
+  color: var(--copper);
+}
+
+.article-hero h1 {
+  margin: 0 0 1rem;
+  max-width: 18ch;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.lede {
+  margin: 0 0 1.25rem;
+  max-width: 36rem;
+  color: var(--ink-soft);
+  font-size: 1.2rem;
+}
+
+.meta {
+  margin: 0;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--mute);
+}
+
+.article-body {
+  padding: clamp(2.5rem, 6vw, 3.75rem) 0 5rem;
+  max-width: calc(var(--measure) + 2.5rem);
+}
+
+.prose > *:first-child {
+  margin-top: 0;
+}
+
+.prose h2 {
+  margin: 2.5rem 0 0.85rem;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.prose h3 {
+  margin: 2rem 0 0.65rem;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 1.15rem;
+  color: var(--ink-soft);
+}
+
+.prose li + li {
+  margin-top: 0.4rem;
+}
+
+.prose strong {
+  color: var(--ink);
+}
+
+.prose code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  background: rgba(16, 24, 32, 0.06);
+  border-radius: 2px;
+}
+
+.prose pre {
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  background: rgba(16, 24, 32, 0.06);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+}
+
+.prose hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--line-strong);
+  padding: 2rem 0 2.75rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.footer-brand {
+  margin: 0;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.footer-note {
+  margin: 0;
+  color: var(--mute);
+  font-size: 0.92rem;
+}
+
+/* Motion */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-delay-1 {
+  transition-delay: 90ms;
+}
+
+.reveal-delay-2 {
+  transition-delay: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .diagram .pulse {
+    animation: none;
+  }
+
+  .btn,
+  .writing-item a,
+  .writing-arrow {
+    transition: none;
+  }
+}

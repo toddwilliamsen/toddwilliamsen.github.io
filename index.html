@@ -1,0 +1,104 @@
+---
+layout: home
+title: Todd Williamsen
+description: Cloud security engineering, Azure architecture, and SOC automation.
+---
+
+<section class="hero">
+  <div class="hero-plane" aria-hidden="true">
+    <svg class="diagram" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice" role="presentation">
+      <rect class="node" x="180" y="110" width="220" height="72" rx="2" />
+      <text x="236" y="152">IDENTITY</text>
+
+      <rect class="node" x="610" y="110" width="220" height="72" rx="2" />
+      <text x="668" y="152">NETWORK</text>
+
+      <rect class="node" x="1040" y="110" width="220" height="72" rx="2" />
+      <text x="1088" y="152">GOVERNANCE</text>
+
+      <path class="wire pulse" d="M290 182 V280 H720 V340" />
+      <path class="wire pulse" d="M720 182 V340" />
+      <path class="wire pulse" d="M1150 182 V280 H720 V340" />
+
+      <rect class="node" x="560" y="340" width="320" height="84" rx="2" />
+      <text x="648" y="390">LANDING ZONE</text>
+
+      <path class="accent pulse" d="M720 424 V510" />
+
+      <rect class="node" x="520" y="510" width="400" height="72" rx="2" />
+      <text x="628" y="554">SECURITY OPERATIONS</text>
+    </svg>
+  </div>
+
+  <div class="shell hero-copy reveal">
+    <p class="brand">Todd Williamsen</p>
+    <h1>Cloud security that holds under real operating pressure.</h1>
+    <p class="hero-support">
+      I design Azure foundations, identity guardrails, and SOC automation
+      so security scales with the platform—not against it.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#writing">Read the writing</a>
+      <a class="btn btn-ghost" href="#focus">What I work on</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="writing">
+  <div class="shell">
+    <div class="section-head reveal">
+      <p class="section-label">Writing</p>
+      <h2>Technical notes from the field</h2>
+      <p>Practical breakdowns of Azure landing zones, Zero Trust controls, and SOC automation.</p>
+    </div>
+
+    <ul class="writing-list">
+      <li class="writing-item reveal">
+        <a href="{{ '/articles/azure-landing-zone-security/' | relative_url }}">
+          <span class="writing-topic">Architecture</span>
+          <h3 class="writing-title">Azure Landing Zone Security</h3>
+          <p class="writing-blurb">Identity, segmentation, governance, and operations as one control plane.</p>
+          <span class="writing-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="writing-item reveal reveal-delay-1">
+        <a href="{{ '/articles/zero-trust-azure/' | relative_url }}">
+          <span class="writing-topic">Zero Trust</span>
+          <h3 class="writing-title">Zero Trust in Azure</h3>
+          <p class="writing-blurb">How identity, device posture, and conditional access reinforce each other.</p>
+          <span class="writing-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="writing-item reveal reveal-delay-2">
+        <a href="{{ '/articles/soc-automation-playbooks/' | relative_url }}">
+          <span class="writing-topic">SOC</span>
+          <h3 class="writing-title">SOC Automation Playbooks</h3>
+          <p class="writing-blurb">Triage, enrichment, and response workflows that reduce analyst toil.</p>
+          <span class="writing-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="focus">
+  <div class="shell">
+    <div class="section-head reveal">
+      <p class="section-label">Focus</p>
+      <h2>Where the work concentrates</h2>
+    </div>
+    <div class="focus-copy reveal reveal-delay-1">
+      <p>
+        Most of my work sits at the intersection of
+        <strong>secure Azure landing zones</strong>,
+        <strong>identity-first Zero Trust</strong>, and
+        <strong>SOC automation</strong> that turns noisy alerts into repeatable response.
+      </p>
+      <p>
+        The through-line is operational clarity: make the right path the easy path,
+        encode guardrails in platform design, and keep detection and response wired
+        into the same architecture that runs the business.
+      </p>
+    </div>
+  </div>
+</section>
