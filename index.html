@@ -31,7 +31,7 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
     <h1>Senior Cloud Security Engineer for Azure estates that already have history.</h1>
     <p class="hero-support">
       I design identity guardrails, governance, and automation for hybrid environments—
-      and build Quantum Helix, a hybrid quantum-classical engine for multi-cloud threat analysis.
+      and explore whether quantum techniques can offer anything practical for cloud threat detection.
     </p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#project">Quantum Helix</a>
@@ -54,9 +54,9 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
         and <strong>Python / PowerShell automation</strong> that makes secure defaults repeatable.
       </p>
       <p>
-        Alongside that platform work, I build <strong>Quantum Helix</strong>—a PoC+ detection engine
-        that normalizes AWS and Azure telemetry, reduces it to feature vectors, and scores anomalies
-        with a hybrid ensemble of classical models and a PennyLane quantum kernel.
+        Alongside that, I’ve been exploring quantum ML for security through
+        <strong>Quantum Helix</strong>—a small pipeline that asks whether quantum kernels,
+        even on classical simulators, behave differently on subtle cloud anomalies.
       </p>
     </div>
   </div>
@@ -65,9 +65,9 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
 <section class="section" id="project">
   <div class="shell">
     <div class="section-head reveal">
-      <p class="section-label">Project</p>
+      <p class="section-label">Exploration</p>
       <h2>Quantum Helix</h2>
-      <p>Multi-cloud hybrid quantum-classical threat detection.</p>
+      <p>A novel way into a practical question about quantum value in cloud security.</p>
     </div>
 
     <figure class="project-figure reveal">
@@ -77,15 +77,28 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
 
     <div class="focus-copy reveal reveal-delay-1">
       <p>
-        Quantum Helix ingests AWS and Azure security telemetry, maps it into a Common Information Model,
-        compresses features with classical PCA, then scores threats with a
-        <strong>hybrid ensemble</strong>: Isolation Forest, classical RBF SVM, and a
-        <strong>PennyLane quantum kernel SVM</strong>. A variational QNN remains an optional research sidecar.
+        Lately, I’ve been exploring whether quantum techniques can offer anything practical for
+        cloud threat detection—even without access to real quantum hardware. With some hype around
+        “quantum cybersecurity,” I wanted to see if quantum kernels running on classical simulators
+        behave differently on subtle cloud anomalies.
       </p>
       <p>
-        Alerts emit as AWS Security Hub (ASFF) and Microsoft Sentinel (CEF) payloads, with a React SOC dashboard
-        for triage. Classical baselines stay mandatory so quantum contribution can be measured—not assumed—
-        through detection rate, false-positive rate, subtle-APT recall, latency, and cost.
+        To test that, I built a small pipeline that pulls in AWS CloudTrail and Azure Activity/NSG logs,
+        normalizes them into a Common Information Model, and runs them through a feature pipeline using
+        StandardScaler and PCA. Classical models like Isolation Forest and RBF SVM handle the
+        straightforward anomalies, while the more complex edge cases get evaluated by a PennyLane QSVM
+        quantum kernel. I combine the scores through an ensemble layer so I can see where the quantum
+        and classical detectors disagree.
+      </p>
+      <p>
+        On the engineering side, I built a lightweight SOC-style console using Flask with SSE streaming,
+        React with Vite, and SQLite with SQLAlchemy for event storage. The most interesting part has been
+        seeing where the quantum kernel diverges from the classical detectors—especially on
+        high-dimensional anomalies that don’t look suspicious at first glance.
+      </p>
+      <p>
+        Still early, but it has been a fun way to explore the question:
+        <strong>is there any practical quantum value in cloud security today, even without quantum hardware?</strong>
       </p>
       <p class="project-link">
         <a class="btn btn-primary" href="https://github.com/toddwilliamsen/quantumhelix">View on GitHub</a>
