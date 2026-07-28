@@ -459,6 +459,30 @@ a:hover {
   font-weight: 600;
 }
 
+.project-figure {
+  margin: 0 0 2rem;
+}
+
+.project-figure img {
+  width: 100%;
+  max-width: 56rem;
+  border: 1px solid var(--line-strong);
+  background: var(--white);
+  border-radius: 2px;
+}
+
+.project-figure figcaption {
+  margin-top: 0.7rem;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--mute);
+}
+
+.project-link {
+  margin-top: 1.75rem !important;
+}
+
 /* Article pages */
 
 .article-hero {

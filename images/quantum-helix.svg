@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500" role="img" aria-labelledby="title">
+  <title id="title">Quantum Helix hybrid quantum-classical threat detection pipeline</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
+</style>
+
+  <rect class="bg" width="960" height="500"/>
+  
+  <text class="title" x="40" y="48">Quantum Helix — Detection Pipeline</text>
+  <text class="sub" x="40" y="72">Hybrid quantum-classical threat scoring for multi-cloud telemetry</text>
+
+  <rect class="panel" x="40" y="110" width="200" height="100" rx="3"/>
+  <text class="tiny" x="58" y="140">INGEST</text>
+  <text class="label" x="58" y="168">AWS · Azure logs</text>
+  <text class="sub" x="58" y="192">CloudTrail / Activity</text>
+
+  <path class="wire-accent" d="M240 160 H280"/>
+
+  <rect class="panel" x="280" y="110" width="200" height="100" rx="3"/>
+  <text class="tiny" x="298" y="140">NORMALIZE</text>
+  <text class="label" x="298" y="168">Common Info Model</text>
+  <text class="sub" x="298" y="192">CloudSecurityEvent</text>
+
+  <path class="wire-accent" d="M480 160 H520"/>
+
+  <rect class="panel" x="520" y="110" width="200" height="100" rx="3"/>
+  <text class="tiny" x="538" y="140">REDUCE</text>
+  <text class="label" x="538" y="168">Scaler + PCA</text>
+  <text class="sub" x="538" y="192">ℝ⁴ feature vectors</text>
+
+  <path class="wire-accent" d="M720 160 H760"/>
+
+  <rect class="panel-accent" x="760" y="100" width="160" height="120" rx="3"/>
+  <text class="tiny" x="778" y="135">SCORE</text>
+  <text class="label" x="778" y="165">Hybrid ensemble</text>
+  <text class="sub" x="778" y="190">IF · SVM · QSVM</text>
+  <text class="sub" x="778" y="212">threat ∈ [0,1]</text>
+
+  <rect class="panel" x="40" y="260" width="280" height="150" rx="3"/>
+  <text class="tiny" x="58" y="292">CLASSICAL CONTROL</text>
+  <text class="label" x="58" y="324">Isolation Forest</text>
+  <text class="sub" x="58" y="350">Unsupervised baseline</text>
+  <text class="label" x="58" y="384">RBF SVM</text>
+
+  <rect class="panel-accent" x="340" y="260" width="280" height="150" rx="3"/>
+  <text class="tiny" x="358" y="292">QUANTUM PATH</text>
+  <text class="label" x="358" y="324">PennyLane fidelity kernel</text>
+  <text class="sub" x="358" y="350">Quantum kernel SVM</text>
+  <text class="sub" x="358" y="374">QNN optional sidecar</text>
+
+  <rect class="panel-ink" x="640" y="260" width="280" height="150" rx="3"/>
+  <text class="tiny" x="658" y="292" style="fill:#c5d0dc">OUTPUT</text>
+  <text class="label-inv" x="658" y="324">ASFF · Security Hub</text>
+  <text class="sub" x="658" y="350" style="fill:#c5d0dc">CEF · Microsoft Sentinel</text>
+  <text class="sub" x="658" y="374" style="fill:#c5d0dc">React SOC dashboard</text>
+  <text class="sub" x="658" y="398" style="fill:#c5d0dc">Benchmark scoreboard</text>
+
+  <text class="sub" x="40" y="460">PoC+: classical baselines mandatory · quantum kernel primary · measurable detection / FPR / latency</text>
+
+</svg>
