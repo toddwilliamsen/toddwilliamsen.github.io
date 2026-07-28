@@ -2,7 +2,7 @@
 layout: default
 title: "Azure Landing Zone Security"
 author: "Todd Williamsen"
-date: "2026-07-28 08:53:50"
+date: "2026-07-28 08:55:47"
 ---
 
 # Azure Landing Zone Security
