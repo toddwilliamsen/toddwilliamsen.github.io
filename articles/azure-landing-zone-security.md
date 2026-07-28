@@ -2,16 +2,16 @@
 layout: article
 title: Azure Landing Zone Security
 topic: Architecture
-summary: How identity, network segmentation, governance, and security operations form one control plane—and how a CISO can tell whether the landing zone is actually working.
+summary: How identity, network segmentation, governance, and security operations form one control plane inside an Azure Landing Zone.
 author: Todd Williamsen
 date: 2026-07-28
-description: A CISO-readable technical guide to securing Azure Landing Zones across identity, network, governance, and SOC operations.
+description: A technical guide to securing Azure Landing Zones across identity, network, governance, and SOC operations.
 permalink: /articles/azure-landing-zone-security/
 ---
 
 An Azure Landing Zone is not a subscription catalog. It is the set of decisions that determine whether the next workload inherits security by default—or inherits drift.
 
-For engineering teams, that means identity, network, policy, and telemetry designed as one system. For a CISO, it means a clearer question than “are we in Azure?”: **can a new workload land safely, be observed immediately, and fail closed when it drifts?**
+That means identity, network, policy, and telemetry designed as one system. The practical test is simple: **can a new workload land safely, be observed immediately, and fail closed when it drifts?**
 
 If the answer is no, you have documentation. If the answer is yes, you have architecture.
 
@@ -47,7 +47,7 @@ Treat Microsoft Entra ID as the front door to the platform, not a directory bolt
   <figcaption>Figure 2. Every actor—human, workload, or partner—should pass through the same identity control plane.</figcaption>
 </figure>
 
-### CISO questions to ask
+### Design checks
 
 1. Who can create subscriptions, and is that path JIT or standing?
 2. How many accounts hold permanent Owner or User Access Administrator?
@@ -124,9 +124,9 @@ At subscription vending time, require:
 
 SOAR playbooks only work if inventory, identity context, and ownership data are already reliable. Enrichment cannot invent clean CMDB data during an incident.
 
-## 5. Operating model: how a CISO measures progress
+## 5. Operating model and evidence of progress
 
-Use outcomes, not slideware.
+Measure outcomes, not slideware.
 
 **Leading indicators**
 
@@ -143,15 +143,15 @@ Use outcomes, not slideware.
 
 ### A practical readiness test
 
-Ask platform engineering to onboard a fictional application next week:
+Onboard a fictional application through the standard path:
 
-1. Can they get a subscription without standing Owner rights?
+1. Can the team get a subscription without standing Owner rights?
 2. Does it inherit network, policy, and logging automatically?
 3. Does an intentional misconfiguration (public storage, open NSG) get denied or alerted?
 4. Does the SOC receive usable telemetry on day one?
 
 Four yes answers means the landing zone is becoming an operating system for secure delivery. Anything less means security is still a negotiation.
 
-## Board-ready takeaway
+## Closing
 
-Azure Landing Zone security succeeds when identity, segmentation, governance, and SOC wiring are inherited—not requested. The CISO’s job is not to memorize every Azure Policy effect. It is to insist that the platform make the secure path the default path, and that drift is visible before it becomes an incident.
+Azure Landing Zone security succeeds when identity, segmentation, governance, and SOC wiring are inherited—not requested. The secure path should be the default path, and drift should be visible before it becomes an incident.
