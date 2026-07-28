@@ -277,38 +277,28 @@ a:hover {
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.9;
-}
-
-.diagram text {
-  fill: var(--ink-soft);
-  font-family: Syne, sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  opacity: 0.55;
 }
 
 .diagram .wire {
   fill: none;
-  stroke: rgba(16, 24, 32, 0.28);
-  stroke-width: 1.5;
-}
-
-.diagram .node {
-  fill: rgba(247, 249, 251, 0.72);
-  stroke: rgba(16, 24, 32, 0.4);
-  stroke-width: 1.5;
+  stroke: rgba(16, 24, 32, 0.18);
+  stroke-width: 1.25;
 }
 
 .diagram .accent {
-  stroke: var(--copper);
+  stroke: rgba(154, 78, 26, 0.35);
   fill: none;
-  stroke-width: 2;
+  stroke-width: 1.5;
+}
+
+.diagram .mark {
+  fill: rgba(154, 78, 26, 0.45);
 }
 
 .diagram .pulse {
-  stroke-dasharray: 8 12;
-  animation: dash 8s linear infinite;
+  stroke-dasharray: 8 14;
+  animation: dash 12s linear infinite;
 }
 
 @keyframes dash {
