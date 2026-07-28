@@ -57,7 +57,7 @@
   <text class="label" x="660" y="176">Connectivity / Identity / Mgmt</text>
 
   <rect class="panel" x="640" y="230" width="280" height="90" rx="3"/>
-  <text class="tiny" x="660" y="258">LANDING ZONES</text>
+  <text class="tiny" x="660" y="258">APP SUBSCRIPTIONS</text>
   <text class="label" x="660" y="286">App subscriptions</text>
 
   <rect class="panel" x="640" y="340" width="280" height="90" rx="3"/>

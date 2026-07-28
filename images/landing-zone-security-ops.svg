@@ -20,7 +20,7 @@
   <rect class="bg" width="960" height="540"/>
   
   <text class="title" x="40" y="48">Security Operations Wiring</text>
-  <text class="sub" x="40" y="72">Telemetry and response are part of the landing zone, not a later project</text>
+  <text class="sub" x="40" y="72">Telemetry and response are part of the platform, not a later project</text>
 
   <rect class="panel" x="40" y="120" width="180" height="80" rx="3"/>
   <text class="label" x="58" y="166">Subscriptions</text>
