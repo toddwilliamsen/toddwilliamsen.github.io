@@ -1,0 +1,10 @@
+---
+layout: default
+title: "SOC Automation Playbooks"
+author: "Todd Williamsen"
+date: "2026-07-28 08:53:50"
+---
+
+# SOC Automation Playbooks
+
+Building automated triage, enrichment, and response workflows using Sentinel SOAR.
