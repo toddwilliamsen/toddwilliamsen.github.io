@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title">
+  <title id="title">SOC automation playbook flow</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; letter-spacing: 0.02em; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
+  .dot { fill: #9a4e1a; }
+</style>
+
+  <rect class="bg" width="960" height="560"/>
+  
+  <text class="title" x="40" y="48">SOC Automation Playbook Flow</text>
+  <text class="sub" x="40" y="72">Automate the first fifteen minutes; keep judgment with the analyst</text>
+
+  <rect class="panel" x="40" y="120" width="160" height="90" rx="3"/>
+  <text class="tiny" x="58" y="150">DETECT</text>
+  <text class="label" x="58" y="180">Sentinel alert</text>
+
+  <path class="wire-accent" d="M200 165 H240"/>
+  <polygon points="240,157 252,165 240,173" class="dot"/>
+
+  <rect class="panel-accent" x="252" y="110" width="200" height="110" rx="3"/>
+  <text class="tiny" x="272" y="140">ENRICH</text>
+  <text class="sub" x="272" y="168">Identity · asset owner</text>
+  <text class="sub" x="272" y="190">Sign-in history</text>
+  <text class="sub" x="272" y="212">Threat intel · related</text>
+
+  <path class="wire-accent" d="M452 165 H492"/>
+
+  <rect class="panel" x="492" y="110" width="200" height="110" rx="3"/>
+  <text class="tiny" x="512" y="140">TRIAGE</text>
+  <text class="sub" x="512" y="168">Severity scoring</text>
+  <text class="sub" x="512" y="190">Deduplicate</text>
+  <text class="sub" x="512" y="212">Route / suppress</text>
+
+  <path class="wire-accent" d="M692 165 H732"/>
+
+  <rect class="panel" x="732" y="110" width="188" height="110" rx="3"/>
+  <text class="tiny" x="752" y="140">DECIDE</text>
+  <text class="sub" x="752" y="168">Auto-safe action</text>
+  <text class="sub" x="752" y="190">or analyst queue</text>
+  <text class="sub" x="752" y="212">with full context</text>
+
+  <path class="wire" d="M826 220 V270"/>
+
+  <rect class="panel" x="40" y="280" width="280" height="200" rx="3"/>
+  <text class="tiny" x="60" y="312">SAFE AUTO-RESPONSE</text>
+  <text class="label" x="60" y="348">Disable risky token</text>
+  <text class="sub" x="60" y="376">Isolate known host class</text>
+  <text class="sub" x="60" y="400">Open ticket + evidence</text>
+  <text class="sub" x="60" y="424">Notify owner</text>
+  <text class="sub" x="60" y="448">Fully audited</text>
+
+  <rect class="panel-accent" x="340" y="280" width="280" height="200" rx="3"/>
+  <text class="tiny" x="360" y="312">ANALYST-REQUIRED</text>
+  <text class="label" x="360" y="348">High-impact changes</text>
+  <text class="sub" x="360" y="376">Broad containment</text>
+  <text class="sub" x="360" y="400">Privileged disable</text>
+  <text class="sub" x="360" y="424">Customer-facing impact</text>
+  <text class="sub" x="360" y="448">Approval gate required</text>
+
+  <rect class="panel-ink" x="640" y="280" width="280" height="200" rx="3"/>
+  <text class="tiny" x="660" y="312" style="fill:#c5d0dc">MEASURE</text>
+  <text class="label-inv" x="660" y="348">MTTA / enrichment %</text>
+  <text class="sub" x="660" y="376" style="fill:#c5d0dc">False-positive trend</text>
+  <text class="sub" x="660" y="400" style="fill:#c5d0dc">Hours returned</text>
+  <text class="sub" x="660" y="424" style="fill:#c5d0dc">Playbook retire/expand</text>
+  <text class="sub" x="660" y="448" style="fill:#c5d0dc">Not “# of playbooks”</text>
+
+</svg>

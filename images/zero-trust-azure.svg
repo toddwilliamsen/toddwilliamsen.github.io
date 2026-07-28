@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title">
+  <title id="title">Zero Trust control loop in Azure</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; letter-spacing: 0.02em; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
+  .dot { fill: #9a4e1a; }
+</style>
+
+  <rect class="bg" width="960" height="560"/>
+  
+  <text class="title" x="40" y="48">Zero Trust Control Loop — Azure</text>
+  <text class="sub" x="40" y="72">Authenticate · Authorize · Observe · Adapt</text>
+
+  <circle cx="480" cy="300" r="70" class="panel-accent"/>
+  <text class="label" x="438" y="296">RESOURCE</text>
+  <text class="sub" x="448" y="320">Access grant</text>
+
+  <!-- four pillars around -->
+  <rect class="panel" x="60" y="150" width="220" height="120" rx="3"/>
+  <text class="tiny" x="80" y="180">1 · IDENTITY</text>
+  <text class="label" x="80" y="210">Verify explicitly</text>
+  <text class="sub" x="80" y="238">CA + MFA + risk</text>
+
+  <rect class="panel" x="680" y="150" width="220" height="120" rx="3"/>
+  <text class="tiny" x="700" y="180">2 · DEVICE</text>
+  <text class="label" x="700" y="210">Check posture</text>
+  <text class="sub" x="700" y="238">Compliance · APP</text>
+
+  <rect class="panel" x="60" y="360" width="220" height="120" rx="3"/>
+  <text class="tiny" x="80" y="390">3 · NETWORK</text>
+  <text class="label" x="80" y="420">Contain blast radius</text>
+  <text class="sub" x="80" y="448">Segment · private path</text>
+
+  <rect class="panel" x="680" y="360" width="220" height="120" rx="3"/>
+  <text class="tiny" x="700" y="390">4 · SIGNALS</text>
+  <text class="label" x="700" y="420">Continuous verify</text>
+  <text class="sub" x="700" y="448">Defender · Sentinel</text>
+
+  <path class="wire-accent" d="M280 210 H410"/>
+  <path class="wire-accent" d="M550 210 H680"/>
+  <path class="wire-accent" d="M280 420 H410"/>
+  <path class="wire-accent" d="M550 420 H680"/>
+
+  <path class="wire" d="M170 270 V360"/>
+  <path class="wire" d="M790 270 V360"/>
+
+  <rect class="panel-ink" x="300" y="470" width="360" height="50" rx="3"/>
+  <text class="label-inv" x="355" y="501">Policy adapts when risk signals change</text>
+
+</svg>

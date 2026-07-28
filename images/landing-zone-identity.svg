@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">Landing zone identity architecture</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; letter-spacing: 0.02em; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
+  .dot { fill: #9a4e1a; }
+</style>
+
+  <rect class="bg" width="960" height="540"/>
+  
+  <text class="title" x="40" y="48">Identity Architecture</text>
+  <text class="sub" x="40" y="72">Who can act, for how long, and under which conditions</text>
+
+  <rect class="panel" x="40" y="110" width="200" height="100" rx="3"/>
+  <text class="tiny" x="58" y="138">HUMANS</text>
+  <text class="label" x="58" y="166">Workforce users</text>
+  <text class="sub" x="58" y="190">Admins via PIM</text>
+
+  <rect class="panel" x="40" y="240" width="200" height="100" rx="3"/>
+  <text class="tiny" x="58" y="268">WORKLOADS</text>
+  <text class="label" x="58" y="296">Managed identities</text>
+  <text class="sub" x="58" y="320">Service principals</text>
+
+  <rect class="panel" x="40" y="370" width="200" height="100" rx="3"/>
+  <text class="tiny" x="58" y="398">PARTNERS</text>
+  <text class="label" x="58" y="426">B2B / guests</text>
+  <text class="sub" x="58" y="450">Scoped access packages</text>
+
+  <path class="wire" d="M240 160 H300"/>
+  <path class="wire" d="M240 290 H300"/>
+  <path class="wire" d="M240 420 H300"/>
+  <path class="wire" d="M300 160 V420"/>
+
+  <rect class="panel-accent" x="300" y="180" width="280" height="200" rx="3"/>
+  <text class="tiny" x="320" y="210">ENTRA ID CONTROL PLANE</text>
+  <text class="label" x="320" y="244">Conditional Access</text>
+  <text class="sub" x="320" y="270">MFA · device · risk · location</text>
+  <text class="label" x="320" y="310">Privileged Identity Mgmt</text>
+  <text class="sub" x="320" y="336">JIT elevation · approval · review</text>
+  <text class="label" x="320" y="370">RBAC / ABAC</text>
+
+  <path class="wire-accent" d="M580 280 H640"/>
+
+  <rect class="panel" x="640" y="120" width="280" height="90" rx="3"/>
+  <text class="tiny" x="660" y="148">PLATFORM</text>
+  <text class="label" x="660" y="176">Connectivity / Identity / Mgmt</text>
+
+  <rect class="panel" x="640" y="230" width="280" height="90" rx="3"/>
+  <text class="tiny" x="660" y="258">LANDING ZONES</text>
+  <text class="label" x="660" y="286">App subscriptions</text>
+
+  <rect class="panel" x="640" y="340" width="280" height="90" rx="3"/>
+  <text class="tiny" x="660" y="368">DATA PLANE</text>
+  <text class="label" x="660" y="396">Key Vault · Storage · SQL</text>
+
+</svg>

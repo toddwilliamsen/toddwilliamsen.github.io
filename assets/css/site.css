@@ -13,7 +13,7 @@
   --copper-deep: #7a3b12;
   --white: #f7f9fb;
   --max: 72rem;
-  --measure: 40rem;
+  --measure: 44rem;
   --header-h: 4.25rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -577,6 +577,63 @@ a:hover {
   margin: 2.5rem 0;
   border: 0;
   border-top: 1px solid var(--line-strong);
+}
+
+.prose figure {
+  margin: 2rem 0 2.25rem;
+}
+
+.prose figure img {
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  background: var(--white);
+  border-radius: 2px;
+}
+
+.prose figcaption {
+  margin-top: 0.7rem;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--mute);
+  line-height: 1.45;
+}
+
+.prose table {
+  width: 100%;
+  margin: 0 0 1.35rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mute);
+  border-bottom-color: var(--line-strong);
+}
+
+.prose td {
+  color: var(--ink-soft);
+}
+
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 2px solid var(--copper);
+  color: var(--ink);
 }
 
 /* Footer */

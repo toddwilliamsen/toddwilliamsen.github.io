@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title">
+  <title id="title">Landing zone security operations telemetry flow</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; letter-spacing: 0.02em; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
+  .dot { fill: #9a4e1a; }
+</style>
+
+  <rect class="bg" width="960" height="540"/>
+  
+  <text class="title" x="40" y="48">Security Operations Wiring</text>
+  <text class="sub" x="40" y="72">Telemetry and response are part of the landing zone, not a later project</text>
+
+  <rect class="panel" x="40" y="120" width="180" height="80" rx="3"/>
+  <text class="label" x="58" y="166">Subscriptions</text>
+
+  <rect class="panel" x="40" y="230" width="180" height="80" rx="3"/>
+  <text class="label" x="70" y="276">Workloads</text>
+
+  <rect class="panel" x="40" y="340" width="180" height="80" rx="3"/>
+  <text class="label" x="78" y="386">Identity</text>
+
+  <path class="wire" d="M220 160 H280"/>
+  <path class="wire" d="M220 270 H280"/>
+  <path class="wire" d="M220 380 H280"/>
+  <path class="wire" d="M280 160 V380"/>
+
+  <rect class="panel-accent" x="280" y="200" width="220" height="140" rx="3"/>
+  <text class="tiny" x="300" y="232">COLLECTION</text>
+  <text class="label" x="300" y="266">Diagnostic settings</text>
+  <text class="sub" x="300" y="294">Defender for Cloud</text>
+  <text class="sub" x="300" y="318">Activity / sign-in logs</text>
+
+  <path class="wire-accent" d="M500 270 H560"/>
+
+  <rect class="panel-ink" x="560" y="200" width="180" height="140" rx="3"/>
+  <text class="label-inv" x="590" y="260">Log Analytics</text>
+  <text class="sub" x="600" y="290" style="fill:#c5d0dc">Central workspace</text>
+
+  <path class="wire-accent" d="M740 270 H800"/>
+
+  <rect class="panel" x="800" y="120" width="120" height="80" rx="3"/>
+  <text class="label" x="822" y="166">Sentinel</text>
+
+  <rect class="panel" x="800" y="230" width="120" height="80" rx="3"/>
+  <text class="label" x="830" y="276">SOAR</text>
+
+  <rect class="panel" x="800" y="340" width="120" height="80" rx="3"/>
+  <text class="label" x="818" y="386">Tickets</text>
+
+  <text class="sub" x="40" y="470">Required at subscription creation: diagnostics on, Defender plans on, ownership tags present, SOC runbook mapped.</text>
+  <text class="sub" x="40" y="496">If any of those are optional, detection coverage will be uneven by design.</text>
+
+</svg>
