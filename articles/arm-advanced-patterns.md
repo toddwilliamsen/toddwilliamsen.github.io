@@ -94,7 +94,7 @@ Advanced ARM isn’t collecting every language feature like Pokémon. It’s rep
 
 ## Sample template
 
-[vnet-copy-and-condition.json]({{ '/samples/arm/advanced/vnet-copy-and-condition.json' | relative_url }}) builds a VNet from a subnet array and optionally deploys a Bastion-related public IP—only when you set the flag. No accidental public IPs “because the sample had one.”
+[advanced/vnet-copy-and-condition.json](https://github.com/toddwilliamsen/arm-templates/blob/main/advanced/vnet-copy-and-condition.json) in **[toddwilliamsen/arm-templates](https://github.com/toddwilliamsen/arm-templates)** builds a VNet from a subnet array and optionally deploys a Bastion-related public IP—only when you set the flag. No accidental public IPs “because the sample had one.”
 
 ```json
 {

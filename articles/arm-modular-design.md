@@ -84,10 +84,10 @@ Hard-coding resource names across modules recreates the mega-template—you just
 
 ## Sample templates
 
-Two files that show the composition idea without requiring a private module registry:
+Two files in **[toddwilliamsen/arm-templates](https://github.com/toddwilliamsen/arm-templates)** that show the composition idea without requiring a private module registry:
 
-- [network.json]({{ '/samples/arm/modular/network.json' | relative_url }}) — VNet module with subnet `copy` and outputs
-- [main.json]({{ '/samples/arm/modular/main.json' | relative_url }}) — nests a network deployment, then deploys storage and surfaces `vnetId` via outputs
+- [modular/network.json](https://github.com/toddwilliamsen/arm-templates/blob/main/modular/network.json) — VNet module with subnet `copy` and outputs
+- [modular/main.json](https://github.com/toddwilliamsen/arm-templates/blob/main/modular/main.json) — nests a network deployment, then deploys storage and surfaces `vnetId` via outputs
 
 The interesting bit in `main.json` is treating nested deployment outputs as the integration API:
 

@@ -135,7 +135,7 @@ Learn ARM deeply enough to debug what Bicep emits. Otherwise you’re flying a p
 
 ## Sample template
 
-[identity-rbac-securestring.json]({{ '/samples/arm/nuances/identity-rbac-securestring.json' | relative_url }}) shows three habits worth stealing:
+[nuances/identity-rbac-securestring.json](https://github.com/toddwilliamsen/arm-templates/blob/main/nuances/identity-rbac-securestring.json) in **[toddwilliamsen/arm-templates](https://github.com/toddwilliamsen/arm-templates)** shows three habits worth stealing:
 
 1. User-assigned identity with an explicit `dependsOn` into the role assignment
 2. Deterministic role assignment name via `guid(...)` so redeploys are boring
@@ -148,13 +148,16 @@ Learn ARM deeply enough to debug what Bicep emits. Otherwise you’re flying a p
 ```
 
 ```bash
+git clone https://github.com/toddwilliamsen/arm-templates.git
+cd arm-templates
+
 az deployment group create \
   -g rg-arm-samples \
-  -f samples/arm/nuances/identity-rbac-securestring.json \
+  -f nuances/identity-rbac-securestring.json \
   -p bootstrapSecret='replace-me-at-deploy-time'
 ```
 
-Full index of samples: [`/samples/arm/`]({{ '/samples/arm/' | relative_url }}).
+Full repo: [github.com/toddwilliamsen/arm-templates](https://github.com/toddwilliamsen/arm-templates).
 
 ## Closing
 
