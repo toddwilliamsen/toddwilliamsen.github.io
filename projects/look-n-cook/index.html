@@ -41,15 +41,53 @@ permalink: /projects/look-n-cook/
       what’s in frame, edit the list, then match against a bundled library of roughly
       <strong>13,500 recipes</strong>.
     </p>
+    <p>
+      <strong>No account required.</strong> Saved recipes, shopping lists, and settings stay on the device.
+      You can also skip the camera entirely and type ingredients by hand.
+    </p>
+
+    <h2>Why on-device</h2>
+    <p>
+      An earlier version leaned on cloud Gemini / Firebase for recipe AI. That path is gone from the
+      mobile app—archived on purpose. The product bet now is local-first:
+    </p>
+    <ul>
+      <li>Kitchen photos aren’t shipped to a cloud model for core scanning</li>
+      <li>No API keys and no cloud inference bill required to decide dinner</li>
+      <li>Matching works offline after the one-time model download</li>
+    </ul>
+    <p>
+      Optional RevenueCat subscriptions can gate freemium scan limits when that ships.
+      They’re not required for the core loop.
+    </p>
+
+    <h2>First launch</h2>
+    <p>
+      On first open, ClearSight AI downloads once over Wi‑Fi—about <strong>350 MB</strong>.
+      After that, scanning and recipe matching run locally. If the download fails, you can retry;
+      manual ingredient entry still works so dinner isn’t blocked on a bad hotel network.
+    </p>
 
     <h2>How it works</h2>
     <ol>
-      <li><strong>Capture</strong> — Take photos of the fridge, pantry, or counter, and/or type ingredients manually.</li>
-      <li><strong>Detect</strong> — ClearSight AI (Liquid LFM2.5-VL via ExecuTorch) identifies food items on-device; OCR helps with package labels when it can.</li>
-      <li><strong>Confirm</strong> — Review, rename, remove, or add items before matching. The model proposes; you decide.</li>
-      <li><strong>Match</strong> — Search the offline SQLite recipe library with filters for time, servings, kid-friendly, and dietary needs.</li>
+      <li><strong>Capture</strong> — Take photos of the fridge, pantry, or counter (up to five), and/or type ingredients manually.</li>
+      <li><strong>Detect</strong> — Where package labels are clear, OCR can pull ingredients first. Otherwise ClearSight AI (Liquid LFM2.5-VL via ExecuTorch) reads the photo on-device, with Apple Vision in the mix.</li>
+      <li><strong>Confirm</strong> — Review, rename, remove, or add items before matching. The model proposes; you decide. Missed the mustard? Add it. Thought the remote was a pepper? Delete it.</li>
+      <li><strong>Match</strong> — Search the offline SQLite recipe library with the filters you set.</li>
       <li><strong>Cook</strong> — Open a recipe, run step-by-step cook mode, build a shopping list for what’s missing, save or share.</li>
     </ol>
+
+    <h2>Filters that actually matter at 5:30 p.m.</h2>
+    <ul>
+      <li><strong>Kid-friendly</strong> — simpler recipes when the audience is picky</li>
+      <li><strong>Max prep time</strong> — 15 to 90 minutes, with an option to count thaw time</li>
+      <li><strong>Servings</strong> — default 4, adjustable</li>
+      <li><strong>Meal type</strong> — main, side, dessert, snack, breakfast</li>
+      <li><strong>Diet &amp; lifestyle</strong> — vegetarian, vegan, gluten-free, dairy-free, nut-free, keto, low carb, diabetes-friendly, paleo, low sodium, heart healthy</li>
+    </ul>
+    <p>
+      Matching recipes show diet badges on results and recipe detail. Filter choices persist on the device.
+    </p>
 
     <h2>What else is in the app</h2>
     <ul>
@@ -58,26 +96,21 @@ permalink: /projects/look-n-cook/
       <li><strong>Saved / My Recipes</strong> — Bookmarks and personal recipes.</li>
       <li><strong>Shopping List</strong> — Missing ingredients pulled from what you want to cook.</li>
       <li><strong>Order Out</strong> — When cooking is not happening tonight, jump to Maps or delivery apps.</li>
-      <li><strong>Filters</strong> — Prep time, meal type, vegetarian/vegan/gluten-free and other diet options, with badges on results.</li>
+      <li><strong>Wild-game recipes</strong> — Curated Look n Cook dishes alongside the main library (venison and friends aren’t an afterthought).</li>
     </ul>
 
-    <h2>Privacy posture</h2>
+    <h2>Platform honesty</h2>
     <p>
-      Default production mode is on-device: vision, recipe matching, and local storage.
-      Kitchen photos are not shipped to a cloud model for core functionality—no API keys and
-      no cloud bill required to decide dinner. Optional RevenueCat subscriptions can gate
-      freemium scan limits when that ships; they’re not required for the core loop.
-    </p>
-    <p>
-      Earlier cloud Gemini / Firebase recipe AI was removed from the mobile app and archived.
-      The product bet is local-first.
+      <strong>iOS is primary</strong> (deployment target 17.0 for the on-device vision stack).
+      An Android package exists, but ClearSight AI is not fully implemented there yet—
+      so v1 focus is iPhone. That’s intentional scope, not a vague “coming soon” shrug.
     </p>
 
     <h2>Stack (short version)</h2>
     <ul>
-      <li>React Native + Expo (iOS primary; Android bundle id exists)</li>
+      <li>React Native + Expo (Router, camera, SQLite, sharing/print)</li>
       <li>Zustand for state; AsyncStorage for saved recipes, lists, and settings</li>
-      <li>expo-sqlite for the bundled recipe database</li>
+      <li>Bundled SQLite recipe database (~13,500 recipes)</li>
       <li>ClearSight AI + Apple Vision for ingredient detection</li>
       <li>EAS / TestFlight for distribution</li>
     </ul>
@@ -92,9 +125,13 @@ permalink: /projects/look-n-cook/
 
     <h2>Status</h2>
     <p>
-      Actively developed toward TestFlight / App Store release. It sits under
-      <a href="{{ '/projects/#other' | relative_url }}">Other projects</a> so it doesn’t get
-      mistaken for cloud security work—because it isn’t.
+      Actively developed toward TestFlight / App Store release. Screenshots will show up here
+      when a production-style build is ready to photograph. Until then, this page is the product story
+      without pretending there’s a store listing yet.
+    </p>
+    <p>
+      It sits under <a href="{{ '/projects/#other' | relative_url }}">Other projects</a> so it
+      doesn’t get mistaken for cloud security work—because it isn’t.
     </p>
 
     <p>
