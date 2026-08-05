@@ -473,6 +473,39 @@ a:hover {
   margin-top: 1.75rem !important;
 }
 
+.project-lanes {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+@media (min-width: 880px) {
+  .project-lanes {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+.project-lane .section-label {
+  margin-bottom: 1rem;
+}
+
+.lane-note {
+  margin: 1.25rem 0 0;
+  font-family: Syne, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.lane-note a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.lane-note a:hover {
+  color: var(--copper-deep);
+}
+
 /* Article pages */
 
 .article-hero {

@@ -31,12 +31,11 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
     <h1>Senior Cloud Security Engineer.</h1>
     <p class="hero-support">
       I work on Azure security day to day—hybrid identity, governance, and automation—
-      so the secure path is the default, not a follow-up project. Quantum Helix is a side project
-      asking whether quantum kernels help with cloud threat detection at all.
+      so the secure path is the default, not a follow-up project.
     </p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#writing">Read the writing</a>
-      <a class="btn btn-ghost" href="#project">Quantum Helix</a>
+      <a class="btn btn-ghost" href="{{ '/projects/' | relative_url }}">Projects</a>
     </div>
   </div>
 </section>
@@ -55,55 +54,60 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
         and <strong>Python / PowerShell automation</strong> that makes secure defaults repeatable.
       </p>
       <p>
-        Alongside that, I’ve been exploring quantum ML for security through
-        <strong>Quantum Helix</strong>—a small pipeline that asks whether quantum kernels,
-        even on classical simulators, behave differently on subtle cloud anomalies.
+        Side projects live on the <a href="{{ '/projects/' | relative_url }}">Projects</a> page—
+        security experiments like Quantum Helix in one lane, and unrelated work like Look n Cook in another.
       </p>
     </div>
   </div>
 </section>
 
-<section class="section" id="project">
+<section class="section" id="projects">
   <div class="shell">
     <div class="section-head reveal">
-      <p class="section-label">Exploration</p>
-      <h2>Quantum Helix</h2>
-      <p>A novel way into a practical question about quantum value in cloud security.</p>
+      <p class="section-label">Projects</p>
+      <h2>Kept in separate lanes</h2>
+      <p>Security work and everything else don’t share a headline.</p>
     </div>
 
-    <figure class="project-figure reveal">
-      <img src="{{ '/images/quantum-helix.svg' | relative_url }}" alt="Quantum Helix pipeline from AWS and Azure ingest through CIM normalization, PCA vectors, hybrid ensemble scoring, and SIEM output">
-      <figcaption>Ingest → normalize → reduce → hybrid score → ASFF / CEF alerting</figcaption>
-    </figure>
+    <div class="project-lanes reveal">
+      <div class="project-lane">
+        <p class="section-label">Security &amp; cloud</p>
+        <ul class="writing-list">
+          <li class="writing-item">
+            <a href="https://github.com/toddwilliamsen/quantumhelix">
+              <span class="writing-topic">Research</span>
+              <h3 class="writing-title">Quantum Helix</h3>
+              <p class="writing-blurb">Quantum-kernel anomaly detection for cloud telemetry.</p>
+              <span class="writing-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="writing-item">
+            <a href="https://github.com/toddwilliamsen/arm-templates">
+              <span class="writing-topic">IaC</span>
+              <h3 class="writing-title">ARM Templates</h3>
+              <p class="writing-blurb">Sample templates for the IaC article series.</p>
+              <span class="writing-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-    <div class="focus-copy reveal reveal-delay-1">
-      <p>
-        Lately, I’ve been exploring whether quantum techniques can offer anything practical for
-        cloud threat detection—even without access to real quantum hardware. With some hype around
-        “quantum cybersecurity,” I wanted to see if quantum kernels running on classical simulators
-        behave differently on subtle cloud anomalies.
-      </p>
-      <p>
-        To test that, I built a small pipeline that pulls in AWS CloudTrail and Azure Activity/NSG logs,
-        normalizes them into a Common Information Model, and runs them through a feature pipeline using
-        StandardScaler and PCA. Classical models like Isolation Forest and RBF SVM handle the
-        straightforward anomalies, while the more complex edge cases get evaluated by a PennyLane QSVM
-        quantum kernel. I combine the scores through an ensemble layer so I can see where the quantum
-        and classical detectors disagree.
-      </p>
-      <p>
-        On the engineering side, I built a lightweight SOC-style console using Flask with SSE streaming,
-        React with Vite, and SQLite with SQLAlchemy for event storage. The most interesting part has been
-        seeing where the quantum kernel diverges from the classical detectors—especially on
-        high-dimensional anomalies that don’t look suspicious at first glance.
-      </p>
-      <p>
-        Still early, but it has been a fun way to explore the question:
-        <strong>is there any practical quantum value in cloud security today, even without quantum hardware?</strong>
-      </p>
-      <p class="project-link">
-        <a class="btn btn-primary" href="https://github.com/toddwilliamsen/quantumhelix">View on GitHub</a>
-      </p>
+      <div class="project-lane">
+        <p class="section-label">Other</p>
+        <ul class="writing-list">
+          <li class="writing-item">
+            <a href="{{ '/projects/look-n-cook/' | relative_url }}">
+              <span class="writing-topic">Mobile</span>
+              <h3 class="writing-title">Look n Cook</h3>
+              <p class="writing-blurb">On-device cooking assistant—unrelated to cloud security.</p>
+              <span class="writing-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        </ul>
+        <p class="lane-note">
+          <a href="{{ '/projects/' | relative_url }}">See all projects →</a>
+        </p>
+      </div>
     </div>
   </div>
 </section>

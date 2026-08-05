@@ -1,0 +1,76 @@
+---
+layout: default
+title: Projects
+description: Security and cloud engineering work, plus other projects that live outside that lane.
+permalink: /projects/
+body_class: is-projects
+---
+
+<article class="article">
+  <header class="article-hero">
+    <div class="shell">
+      <p class="eyebrow">Projects</p>
+      <h1>Two lanes</h1>
+      <p class="lede">
+        Cloud security work sits in one place. Everything else—like Look n Cook—sits in another.
+        Same person, different problems.
+      </p>
+    </div>
+  </header>
+
+  <div class="shell article-body" style="max-width: min(100% - 2.5rem, 72rem);">
+    <section class="section" id="security" style="padding-top: 0; border-top: 0;">
+      <div class="section-head reveal">
+        <p class="section-label">Security &amp; cloud</p>
+        <h2>What I do professionally</h2>
+        <p>Azure security, identity, automation, and experiments that still belong in that world.</p>
+      </div>
+
+      <ul class="writing-list">
+        <li class="writing-item reveal">
+          <a href="https://github.com/toddwilliamsen/quantumhelix">
+            <span class="writing-topic">Security · Research</span>
+            <h3 class="writing-title">Quantum Helix</h3>
+            <p class="writing-blurb">Hybrid quantum-classical threat detection for AWS and Azure telemetry—asking whether quantum kernels help without real quantum hardware.</p>
+            <span class="writing-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="writing-item reveal reveal-delay-1">
+          <a href="https://github.com/toddwilliamsen/arm-templates">
+            <span class="writing-topic">IaC · Samples</span>
+            <h3 class="writing-title">ARM Templates</h3>
+            <p class="writing-blurb">Educational Azure Resource Manager samples from fundamentals through modular design, advanced patterns, and production nuances.</p>
+            <span class="writing-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="writing-item reveal reveal-delay-2">
+          <a href="{{ '/articles/quantum-helix/' | relative_url }}">
+            <span class="writing-topic">Writing</span>
+            <h3 class="writing-title">Quantum Helix article</h3>
+            <p class="writing-blurb">The write-up behind the experiment—part of the cloud security series.</p>
+            <span class="writing-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="other">
+      <div class="section-head reveal">
+        <p class="section-label">Other projects</p>
+        <h2>Outside the security lane</h2>
+        <p>Personal / product work that isn’t cloud security engineering.</p>
+      </div>
+
+      <ul class="writing-list">
+        <li class="writing-item reveal">
+          <a href="{{ '/projects/look-n-cook/' | relative_url }}">
+            <span class="writing-topic">Mobile · Consumer</span>
+            <h3 class="writing-title">Look n Cook</h3>
+            <p class="writing-blurb">A cooking assistant for families—photograph what you have, confirm ingredients, and match recipes on-device. Not related to Azure, SOC, or quantum detection.</p>
+            <span class="writing-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</article>
