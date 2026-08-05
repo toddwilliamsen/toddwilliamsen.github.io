@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Look n Cook
-description: A mobile cooking assistant for families—on-device ingredient recognition and recipe matching. Separate from cloud security work.
+description: A mobile cooking assistant for families—photograph ingredients, match recipes on-device with ClearSight AI, and cook step by step.
 permalink: /projects/look-n-cook/
 ---
 
@@ -15,31 +15,86 @@ permalink: /projects/look-n-cook/
       </p>
       <h1>Look n Cook</h1>
       <p class="lede">
-        A cooking assistant for families—photograph what you have, confirm ingredients,
-        and get recipe matches. Photos and matching run on the phone by default.
+        A cooking assistant for families. Photograph what’s in the fridge or pantry,
+        confirm the ingredients, and get recipe matches—without sending kitchen photos to the cloud.
       </p>
-      <p class="meta"><span>Other projects</span><span aria-hidden="true">·</span><span>Not cloud security</span></p>
+      <p class="meta"><span>Other projects</span><span aria-hidden="true">·</span><span>iOS · on-device AI</span></p>
     </div>
   </header>
 
   <div class="shell article-body prose">
     <p>
-      This one sits outside the security lane on purpose. Look n Cook is a consumer mobile app:
-      point the camera at what’s in the fridge or pantry, confirm what the on-device model sees,
-      and match against a large offline recipe library.
+      This one lives outside the security lane on purpose. Look n Cook is a consumer mobile app
+      for the “what’s for dinner?” problem—not Azure, not Sentinel, not quantum kernels.
+      Same builder, different kitchen.
     </p>
 
-    <h2>What it is</h2>
+    <figure>
+      <img src="{{ '/images/look-n-cook.svg' | relative_url }}" alt="Look n Cook flow: capture, detect with ClearSight AI, confirm ingredients, match recipes, cook mode">
+      <figcaption>Figure 1. The core loop stays on the phone by default.</figcaption>
+    </figure>
+
+    <h2>The idea</h2>
+    <p>
+      Most recipe apps assume you already know what you’re making. Look n Cook starts from what
+      you actually have. Snap up to five photos (or type ingredients), let on-device AI suggest
+      what’s in frame, edit the list, then match against a bundled library of roughly
+      <strong>13,500 recipes</strong>.
+    </p>
+
+    <h2>How it works</h2>
+    <ol>
+      <li><strong>Capture</strong> — Take photos of the fridge, pantry, or counter, and/or type ingredients manually.</li>
+      <li><strong>Detect</strong> — ClearSight AI (Liquid LFM2.5-VL via ExecuTorch) identifies food items on-device; OCR helps with package labels when it can.</li>
+      <li><strong>Confirm</strong> — Review, rename, remove, or add items before matching. The model proposes; you decide.</li>
+      <li><strong>Match</strong> — Search the offline SQLite recipe library with filters for time, servings, kid-friendly, and dietary needs.</li>
+      <li><strong>Cook</strong> — Open a recipe, run step-by-step cook mode, build a shopping list for what’s missing, save or share.</li>
+    </ol>
+
+    <h2>What else is in the app</h2>
     <ul>
-      <li>Expo / React Native app (iOS primary)</li>
-      <li>On-device vision via ClearSight AI (Liquid LFM2.5-VL through react-native-executorch)</li>
-      <li>Offline recipe library—thousands of real recipes, plus curated wild-game recipes</li>
+      <li><strong>Browse Recipes</strong> — Search the full offline library without scanning.</li>
+      <li><strong>Create Recipe</strong> — Write and save your own dishes on the device.</li>
+      <li><strong>Saved / My Recipes</strong> — Bookmarks and personal recipes.</li>
+      <li><strong>Shopping List</strong> — Missing ingredients pulled from what you want to cook.</li>
+      <li><strong>Order Out</strong> — When cooking is not happening tonight, jump to Maps or delivery apps.</li>
+      <li><strong>Filters</strong> — Prep time, meal type, vegetarian/vegan/gluten-free and other diet options, with badges on results.</li>
     </ul>
 
-    <h2>What it is not</h2>
+    <h2>Privacy posture</h2>
     <p>
-      It is not Azure, Sentinel, Zero Trust, ARM, or Quantum Helix. Those live under
-      <a href="{{ '/projects/#security' | relative_url }}">Security &amp; cloud</a>.
+      Default production mode is on-device: vision, recipe matching, and local storage.
+      Kitchen photos are not shipped to a cloud model for core functionality—no API keys and
+      no cloud bill required to decide dinner. Optional RevenueCat subscriptions can gate
+      freemium scan limits when that ships; they’re not required for the core loop.
+    </p>
+    <p>
+      Earlier cloud Gemini / Firebase recipe AI was removed from the mobile app and archived.
+      The product bet is local-first.
+    </p>
+
+    <h2>Stack (short version)</h2>
+    <ul>
+      <li>React Native + Expo (iOS primary; Android bundle id exists)</li>
+      <li>Zustand for state; AsyncStorage for saved recipes, lists, and settings</li>
+      <li>expo-sqlite for the bundled recipe database</li>
+      <li>ClearSight AI + Apple Vision for ingredient detection</li>
+      <li>EAS / TestFlight for distribution</li>
+    </ul>
+
+    <h2>Data &amp; attribution</h2>
+    <p>
+      Recipe library data includes Epicurious content via
+      <a href="https://github.com/josephrmartinez/recipe-dataset">josephrmartinez/recipe-dataset</a>
+      (CC BY-SA 3.0), plus Look n Cook curated wild-game recipes. Nutrition estimates, when present,
+      use USDA FoodData Central (CC0).
+    </p>
+
+    <h2>Status</h2>
+    <p>
+      Actively developed toward TestFlight / App Store release. It sits under
+      <a href="{{ '/projects/#other' | relative_url }}">Other projects</a> so it doesn’t get
+      mistaken for cloud security work—because it isn’t.
     </p>
 
     <p>
