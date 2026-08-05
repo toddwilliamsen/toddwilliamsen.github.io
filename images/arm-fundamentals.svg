@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="title">
+  <title id="title">ARM template anatomy</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
+</style>
+
+  <rect class="bg" width="960" height="480"/>
+  
+  <text class="title" x="40" y="48">ARM Template Anatomy</text>
+  <text class="sub" x="40" y="72">Declarative JSON that Azure Resource Manager executes as desired state</text>
+
+  <rect class="panel-ink" x="40" y="110" width="180" height="70" rx="3"/>
+  <text class="label-inv" x="70" y="152">$schema</text>
+
+  <rect class="panel" x="240" y="110" width="180" height="70" rx="3"/>
+  <text class="label" x="275" y="152">parameters</text>
+
+  <rect class="panel" x="440" y="110" width="180" height="70" rx="3"/>
+  <text class="label" x="285" y="0" opacity="0"/>
+  <text class="label" x="485" y="152">variables</text>
+
+  <rect class="panel-accent" x="640" y="110" width="180" height="70" rx="3"/>
+  <text class="label" x="680" y="152">resources</text>
+
+  <rect class="panel" x="840" y="110" width="80" height="70" rx="3"/>
+  <text class="label" x="852" y="152">out</text>
+
+  <path class="wire-accent" d="M130 180 V230 H730 V260"/>
+  <path class="wire-accent" d="M330 180 V230"/>
+  <path class="wire-accent" d="M530 180 V230"/>
+  <path class="wire-accent" d="M730 180 V260"/>
+
+  <rect class="panel" x="200" y="260" width="560" height="160" rx="3"/>
+  <text class="tiny" x="230" y="295">DEPLOYMENT</text>
+  <text class="label" x="230" y="330">Resource Manager validates → orchestrates → converges</text>
+  <text class="sub" x="230" y="360">API version pins behavior · dependsOn orders creation</text>
+  <text class="sub" x="230" y="388">Incremental (default) merges · Complete remediates extras</text>
+  <text class="sub" x="230" y="416">What-if previews changes before you commit</text>
+
+</svg>

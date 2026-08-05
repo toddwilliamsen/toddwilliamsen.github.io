@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title">
+  <title id="title">ARM nuances in production</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
+</style>
+
+  <rect class="bg" width="960" height="520"/>
+  
+  <text class="title" x="40" y="48">ARM Nuances That Bite in Production</text>
+  <text class="sub" x="40" y="72">The gaps between “it deploys” and “it converges safely”</text>
+
+  <rect class="panel" x="40" y="110" width="280" height="120" rx="3"/>
+  <text class="tiny" x="65" y="145">API VERSIONS</text>
+  <text class="label" x="65" y="178">Pin deliberately</text>
+  <text class="sub" x="65" y="208">Behavior changes silently</text>
+
+  <rect class="panel" x="340" y="110" width="280" height="120" rx="3"/>
+  <text class="tiny" x="365" y="145">SECRETS</text>
+  <text class="label" x="365" y="178">Never in parameters.json</text>
+  <text class="sub" x="365" y="208">Key Vault references · secureString</text>
+
+  <rect class="panel" x="640" y="110" width="280" height="120" rx="3"/>
+  <text class="tiny" x="665" y="145">IDEMPOTENCY</text>
+  <text class="label" x="665" y="178">Name collisions · child resources</text>
+  <text class="sub" x="665" y="208">Redeploy must be safe</text>
+
+  <rect class="panel-accent" x="40" y="260" width="280" height="120" rx="3"/>
+  <text class="tiny" x="65" y="295">RBAC IN TEMPLATES</text>
+  <text class="label" x="65" y="328">Guid names · principal IDs</text>
+  <text class="sub" x="65" y="358">Race with identity creation</text>
+
+  <rect class="panel" x="340" y="260" width="280" height="120" rx="3"/>
+  <text class="tiny" x="365" y="295">COMPLETE MODE</text>
+  <text class="label" x="365" y="328">Scope is the blast radius</text>
+  <text class="sub" x="365" y="358">Missing resource = delete</text>
+
+  <rect class="panel" x="640" y="260" width="280" height="120" rx="3"/>
+  <text class="tiny" x="665" y="295">DRIFT</text>
+  <text class="label" x="665" y="328">Portal clicks vs source of truth</text>
+  <text class="sub" x="665" y="358">What-if + policy as guardrails</text>
+
+  <text class="sub" x="40" y="430">Treat templates as contracts: explicit API versions, explicit ownership tags, explicit denial of public exposure.</text>
+  <text class="sub" x="40" y="458">If a property is security-relevant and optional, assume someone will leave it unset under delivery pressure.</text>
+
+</svg>
