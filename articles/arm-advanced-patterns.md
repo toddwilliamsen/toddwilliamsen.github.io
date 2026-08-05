@@ -92,6 +92,22 @@ Some bootstrap steps are awkward in pure declarative form: seeding Key Vault fro
 
 Advanced ARM isn’t collecting every language feature like Pokémon. It’s repeatable convergence with fewer pages at 2 a.m.
 
+## Sample template
+
+[vnet-copy-and-condition.json]({{ '/samples/arm/advanced/vnet-copy-and-condition.json' | relative_url }}) builds a VNet from a subnet array and optionally deploys a Bastion-related public IP—only when you set the flag. No accidental public IPs “because the sample had one.”
+
+```json
+{
+  "condition": "[parameters('deployBastionPublicIp')]",
+  "type": "Microsoft.Network/publicIPAddresses",
+  "apiVersion": "2023-09-01",
+  "name": "[variables('pipName')]",
+  ...
+}
+```
+
+What-if this against a disposable RG before you get comfortable. Complete mode is still waiting in the wings with scissors.
+
 Next: the nuances—API versions, secrets, RBAC races, drift, and all the ways a green deployment can still be lying to you.
 
 ---

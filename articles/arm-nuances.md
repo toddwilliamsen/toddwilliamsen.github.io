@@ -133,6 +133,29 @@ But:
 
 Learn ARM deeply enough to debug what Bicep emits. Otherwise you’re flying a plane you can take off in but can’t read the instruments for.
 
+## Sample template
+
+[identity-rbac-securestring.json]({{ '/samples/arm/nuances/identity-rbac-securestring.json' | relative_url }}) shows three habits worth stealing:
+
+1. User-assigned identity with an explicit `dependsOn` into the role assignment
+2. Deterministic role assignment name via `guid(...)` so redeploys are boring
+3. A `secureString` parameter you pass at deploy time—not from a committed parameters file
+
+```json
+"variables": {
+  "roleAssignmentName": "[guid(resourceGroup().id, parameters('identityName'), parameters('roleDefinitionId'))]"
+}
+```
+
+```bash
+az deployment group create \
+  -g rg-arm-samples \
+  -f samples/arm/nuances/identity-rbac-securestring.json \
+  -p bootstrapSecret='replace-me-at-deploy-time'
+```
+
+Full index of samples: [`/samples/arm/`]({{ '/samples/arm/' | relative_url }}).
+
 ## Closing
 
 ARM mastery isn’t memorizing every function. It’s encoding safe defaults: pinned API versions, no secrets in Git, deterministic names, reviewed what-if, and policy as backup for the days humans are human.

@@ -82,6 +82,26 @@ Hard-coding resource names across modules recreates the mega-template—you just
 - Are environment differences expressed only through parameters?
 - Are module boundaries aligned to who gets paged when something breaks? (If the answer is “everyone,” the boundaries are decorative.)
 
+## Sample templates
+
+Two files that show the composition idea without requiring a private module registry:
+
+- [network.json]({{ '/samples/arm/modular/network.json' | relative_url }}) — VNet module with subnet `copy` and outputs
+- [main.json]({{ '/samples/arm/modular/main.json' | relative_url }}) — nests a network deployment, then deploys storage and surfaces `vnetId` via outputs
+
+The interesting bit in `main.json` is treating nested deployment outputs as the integration API:
+
+```json
+"outputs": {
+  "vnetId": {
+    "type": "string",
+    "value": "[reference('deploy-network').outputs.vnetId.value]"
+  }
+}
+```
+
+In a real pipeline you’d usually **link** `network.json` from a versioned artifact URI instead of inlining—same contract, less copy-paste.
+
 Next: copy loops, conditions, deployment modes, what-if, and the special joy of complete mode.
 
 ---

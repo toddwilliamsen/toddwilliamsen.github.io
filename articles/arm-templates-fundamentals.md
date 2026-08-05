@@ -87,6 +87,36 @@ You can:
 - Explain why `apiVersion` is pinned without hand-waving
 - Redeploy the same template without inventing new resources by accident
 
+## Sample template
+
+A small storage account template that makes the boring-but-important decisions explicit: tags, TLS 1.2, public blob access as a parameter (default `false`), and network ACLs that deny by default.
+
+- [storage-account.json]({{ '/samples/arm/fundamentals/storage-account.json' | relative_url }})
+- [parameters.dev.json]({{ '/samples/arm/fundamentals/parameters.dev.json' | relative_url }})
+
+```json
+"properties": {
+  "minimumTlsVersion": "TLS1_2",
+  "allowBlobPublicAccess": "[parameters('allowBlobPublicAccess')]",
+  "supportsHttpsTrafficOnly": true,
+  "networkAcls": {
+    "defaultAction": "Deny",
+    "bypass": "AzureServices"
+  }
+}
+```
+
+Deploy it with:
+
+```bash
+az deployment group create \
+  -g rg-arm-samples \
+  -f samples/arm/fundamentals/storage-account.json \
+  -p @samples/arm/fundamentals/parameters.dev.json
+```
+
+More samples live under [`/samples/arm/`]({{ '/samples/arm/' | relative_url }}).
+
 Next up: composing templates so networking, identity, and workloads stay modular—without summoning a single 4,000-line JSON boss fight.
 
 ---

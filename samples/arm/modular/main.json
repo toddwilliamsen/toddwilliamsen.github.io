@@ -1,0 +1,98 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "description": "Sample main template that nests the network module, then deploys a storage account into the shared VNet story via outputs. Educational composition pattern."
+  },
+  "parameters": {
+    "environment": {
+      "type": "string",
+      "allowedValues": [ "dev", "test", "prod" ]
+    },
+    "owner": { "type": "string" },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]"
+    }
+  },
+  "variables": {
+    "storageName": "[toLower(concat('st', parameters('environment'), uniqueString(resourceGroup().id)))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "deploy-network",
+      "properties": {
+        "mode": "Incremental",
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "vnetName": { "type": "string" },
+            "location": { "type": "string" }
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Network/virtualNetworks",
+              "apiVersion": "2023-09-01",
+              "name": "[parameters('vnetName')]",
+              "location": "[parameters('location')]",
+              "properties": {
+                "addressSpace": { "addressPrefixes": [ "10.30.0.0/16" ] },
+                "subnets": [
+                  {
+                    "name": "snet-app",
+                    "properties": { "addressPrefix": "10.30.1.0/24" }
+                  },
+                  {
+                    "name": "snet-pe",
+                    "properties": { "addressPrefix": "10.30.2.0/24" }
+                  }
+                ]
+              }
+            }
+          ],
+          "outputs": {
+            "vnetId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName'))]"
+            }
+          }
+        },
+        "parameters": {
+          "vnetName": { "value": "[concat('vnet-', parameters('environment'))]" },
+          "location": { "value": "[parameters('location')]" }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-01-01",
+      "name": "[variables('storageName')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [ "deploy-network" ],
+      "tags": {
+        "environment": "[parameters('environment')]",
+        "owner": "[parameters('owner')]"
+      },
+      "sku": { "name": "Standard_LRS" },
+      "kind": "StorageV2",
+      "properties": {
+        "minimumTlsVersion": "TLS1_2",
+        "allowBlobPublicAccess": false,
+        "supportsHttpsTrafficOnly": true
+      }
+    }
+  ],
+  "outputs": {
+    "vnetId": {
+      "type": "string",
+      "value": "[reference('deploy-network').outputs.vnetId.value]"
+    },
+    "storageAccountName": {
+      "type": "string",
+      "value": "[variables('storageName')]"
+    }
+  }
+}

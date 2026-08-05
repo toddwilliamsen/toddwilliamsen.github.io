@@ -580,6 +580,8 @@ a:hover {
   background: rgba(16, 24, 32, 0.06);
   border: 1px solid var(--line);
   border-radius: 2px;
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 .prose pre code {
