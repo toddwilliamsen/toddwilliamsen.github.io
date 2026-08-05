@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Todd Williamsen
-description: Senior Cloud Security Engineer specializing in Azure security architecture, hybrid identity, and hybrid quantum-classical threat detection.
+description: Senior Cloud Security Engineer specializing in Azure security architecture, hybrid identity, governance, and automation.
 ---
 
 <section class="hero">
@@ -30,8 +30,9 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
     <p class="brand">Todd Williamsen</p>
     <h1>Senior Cloud Security Engineer.</h1>
     <p class="hero-support">
-      I work on Azure security day to day—hybrid identity, governance, and automation—
-      so the secure path is the default, not a follow-up project.
+      I design and secure Azure environments—identity, governance, automation, and architecture
+      that holds under pressure. Day to day that means Entra&nbsp;ID, Defender, Sentinel, and ARM:
+      making the secure path the default, not a follow-up project.
     </p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#writing">Read the writing</a>
@@ -48,14 +49,18 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
     </div>
     <div class="focus-copy reveal reveal-delay-1">
       <p>
-        Day to day, that means <strong>Azure security architecture</strong>,
+        Day to day, I work across <strong>Azure security architecture</strong>,
         <strong>Entra ID and hybrid identity</strong>,
-        <strong>Microsoft Defender for Cloud and Sentinel</strong>,
-        and <strong>Python / PowerShell automation</strong> that makes secure defaults repeatable.
+        <strong>Microsoft Defender for Cloud</strong>,
+        <strong>Sentinel</strong>, and
+        <strong>Python / PowerShell automation</strong>.
+        The goal is simple: make secure defaults repeatable, enforceable, and boring—
+        because boring security is the kind that survives production.
       </p>
       <p>
-        Side projects live on the <a href="{{ '/projects/' | relative_url }}">Projects</a> page—
-        security experiments like Quantum Helix in one lane, and unrelated work like Look n Cook in another.
+        Side projects live on the <a href="{{ '/projects/' | relative_url }}">Projects</a> page.
+        Some are serious (Quantum Helix). Some are not (Look n Cook).
+        They don’t share a headline for a reason.
       </p>
     </div>
   </div>
@@ -66,7 +71,7 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
     <div class="section-head reveal">
       <p class="section-label">Projects</p>
       <h2>Kept in separate lanes</h2>
-      <p>Security work and everything else don’t share a headline.</p>
+      <p>Security work and everything else don’t mix.</p>
     </div>
 
     <div class="project-lanes reveal">
@@ -77,7 +82,7 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
             <a href="https://github.com/toddwilliamsen/quantumhelix">
               <span class="writing-topic">Research</span>
               <h3 class="writing-title">Quantum Helix</h3>
-              <p class="writing-blurb">Quantum-kernel anomaly detection for cloud telemetry.</p>
+              <p class="writing-blurb">Quantum-kernel anomaly detection for cloud telemetry—asking whether the math helps without real quantum hardware.</p>
               <span class="writing-arrow" aria-hidden="true">→</span>
             </a>
           </li>
@@ -85,7 +90,7 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
             <a href="https://github.com/toddwilliamsen/arm-templates">
               <span class="writing-topic">IaC</span>
               <h3 class="writing-title">ARM Templates</h3>
-              <p class="writing-blurb">Sample templates for the IaC article series.</p>
+              <p class="writing-blurb">Sample templates for the IaC series—modular, parameterized, and meant to stay readable.</p>
               <span class="writing-arrow" aria-hidden="true">→</span>
             </a>
           </li>
@@ -121,21 +126,26 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
     <div class="focus-copy reveal reveal-delay-1">
       <p>
         I’m a <strong>Senior Cloud Security Engineer</strong> focused on Azure security architecture,
-        hybrid identity, governance, and automation—engineering secure lab and workload environments,
-        CSPM aligned to NIST and CIS, and policy/RBAC guardrails that hold after the design review ends.
+        hybrid identity, governance, and automation. I build secure lab and workload environments,
+        CSPM aligned to NIST and CIS, and policy/RBAC guardrails that keep their shape long after
+        the design review ends.
       </p>
       <p>
-        That work sits on a long operational foundation: Tier&nbsp;3 escalation for hybrid
+        That sits on a long operational foundation: Tier&nbsp;3 escalation for hybrid
         Entra&nbsp;ID / Active Directory failures, Conditional Access and PIM for Zero Trust access,
         Azure compute and SQL posture under incident pressure, and cloud-attached endpoint strategy
         across large hybrid estates.
       </p>
       <p>
         Earlier, I led engineering for massive modern-management environments—including a MECM estate
-        supporting <strong>170,000+ endpoints</strong> in regulated healthcare—under HIPAA, CIS, and
+        supporting <strong>170,000+ endpoints</strong> in regulated healthcare under HIPAA, CIS, and
         NIST expectations. The through-line is the same: secure the control plane, encode guardrails
         in the platform, and keep identity, configuration, and detection close enough to operations
         that security survives delivery pressure.
+      </p>
+      <p>
+        In short: make sure the cloud doesn’t fall over—especially because someone forgot identity,
+        governance, or automation.
       </p>
     </div>
   </div>
@@ -146,7 +156,7 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
     <div class="section-head reveal">
       <p class="section-label">Writing</p>
       <h2>Cloud security engineering series</h2>
-      <p>A chronological progression through SOAR automation, Zero Trust identity, Landing Zone architecture, and quantum-kernel anomaly detection.</p>
+      <p>A chronological progression through SOAR automation, Zero Trust identity, Landing Zone architecture, and quantum-kernel anomaly detection—the parts of Azure security that matter, and the parts that break.</p>
     </div>
 
     <ul class="writing-list">
