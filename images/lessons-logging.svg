@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-labelledby="title">
+  <title id="title">Logging and diagnostics lesson</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 20px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #101820; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 11px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 10px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.3; stroke-opacity: 0.3; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.7; }
+</style>
+
+  <rect class="bg" width="960" height="400"/>
+  
+  <text class="title" x="40" y="44">Lesson: Turn logging on before the incident</text>
+  <text class="sub" x="40" y="68">If diagnostics are optional at create-time, coverage will be uneven by design</text>
+  <rect class="panel" x="40" y="120" width="180" height="100" rx="3"/>
+  <text class="label" x="60" y="165">Azure resources</text>
+  <rect class="panel" x="40" y="250" width="180" height="100" rx="3"/>
+  <text class="label" x="70" y="295">M365 / Entra</text>
+  <rect class="panel" x="40" y="185" width="180" height="50" rx="3" opacity="0"/>
+  <path class="wire-accent" d="M220 170 H280"/><path class="wire-accent" d="M220 300 H280"/>
+  <path class="wire" d="M280 170 V300"/>
+  <rect class="panel-accent" x="280" y="180" width="240" height="110" rx="3"/>
+  <text class="tiny" x="300" y="215">COLLECT</text>
+  <text class="label" x="300" y="245">Diagnostics · audit</text>
+  <text class="sub" x="300" y="272">Sign-in · UAL</text>
+  <path class="wire-accent" d="M520 235 H580"/>
+  <rect class="panel-ink" x="580" y="160" width="340" height="150" rx="3"/>
+  <text class="tiny" x="600" y="195" style="fill:#c5d0dc">USE</text>
+  <text class="label-inv" x="600" y="230">Log Analytics · Sentinel</text>
+  <text class="sub" x="600" y="258" style="fill:#c5d0dc">Purview audit · Defender</text>
+  <text class="sub" x="600" y="286" style="fill:#c5d0dc">If it is not collected, it is not investigable</text>
+
+</svg>

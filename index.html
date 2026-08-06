@@ -87,10 +87,26 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
             </a>
           </li>
           <li class="writing-item">
+            <a href="{{ '/projects/rocky-lab/' | relative_url }}">
+              <span class="writing-topic">Labs</span>
+              <h3 class="writing-title">Rocky Lab Platform</h3>
+              <p class="writing-blurb">Custom Rocky 9.7 images, ARM provisioning, and self-service secure labs.</p>
+              <span class="writing-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="writing-item">
             <a href="https://github.com/toddwilliamsen/arm-templates">
               <span class="writing-topic">IaC</span>
               <h3 class="writing-title">ARM Templates</h3>
               <p class="writing-blurb">Sample templates for the IaC series—modular, parameterized, and meant to stay readable.</p>
+              <span class="writing-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="writing-item">
+            <a href="https://github.com/toddwilliamsen/cloud-powershell">
+              <span class="writing-topic">Scripts</span>
+              <h3 class="writing-title">cloud-powershell</h3>
+              <p class="writing-blurb">Troubleshoot, build, and secure scripts for Azure, Entra, M365, and Windows hybrid.</p>
               <span class="writing-arrow" aria-hidden="true">→</span>
             </a>
           </li>
@@ -230,6 +246,55 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
           <span class="writing-topic">Part 4 · July 22</span>
           <h3 class="writing-title">ARM Nuances in Production</h3>
           <p class="writing-blurb">Secrets, RBAC races, API version traps, drift, and the gaps a green deploy can hide.</p>
+          <span class="writing-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="section-head reveal" style="margin-top: clamp(3rem, 6vw, 4rem);">
+      <p class="section-label">Writing</p>
+      <h2>Lessons from the field</h2>
+      <p>Basic cloud, M365, and Windows concepts—written as lessons learned. Companion scripts in <a href="https://github.com/toddwilliamsen/cloud-powershell">toddwilliamsen/cloud-powershell</a>.</p>
+    </div>
+
+    <ul class="writing-list">
+      <li class="writing-item reveal">
+        <a href="{{ '/articles/lessons-identity-entra-m365/' | relative_url }}">
+          <span class="writing-topic">Part 1 · Aug 1</span>
+          <h3 class="writing-title">Identity First</h3>
+          <p class="writing-blurb">Entra ID as the control plane for Azure, Microsoft 365, and hybrid Windows.</p>
+          <span class="writing-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="writing-item reveal reveal-delay-1">
+        <a href="{{ '/articles/lessons-conditional-access/' | relative_url }}">
+          <span class="writing-topic">Part 2 · Aug 4</span>
+          <h3 class="writing-title">Conditional Access</h3>
+          <p class="writing-blurb">Policies that drift, exclusions that age, and admin paths that need teeth first.</p>
+          <span class="writing-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="writing-item reveal reveal-delay-2">
+        <a href="{{ '/articles/lessons-windows-hybrid/' | relative_url }}">
+          <span class="writing-topic">Part 3 · Aug 6</span>
+          <h3 class="writing-title">Windows Hybrid</h3>
+          <p class="writing-blurb">Hybrid join, Intune/MECM, and why device identity still decides if CA means anything.</p>
+          <span class="writing-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="writing-item reveal">
+        <a href="{{ '/articles/lessons-logging-diagnostics/' | relative_url }}">
+          <span class="writing-topic">Part 4 · Aug 8</span>
+          <h3 class="writing-title">Logging Before the Fire</h3>
+          <p class="writing-blurb">Azure diagnostics and M365 unified audit—turn collection on before the incident.</p>
+          <span class="writing-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="writing-item reveal">
+        <a href="{{ '/articles/lessons-rbac-least-privilege/' | relative_url }}">
+          <span class="writing-topic">Part 5 · Aug 11</span>
+          <h3 class="writing-title">Least Privilege</h3>
+          <p class="writing-blurb">Standing Owner, PIM culture, and reviewing both Azure and M365 admin planes.</p>
           <span class="writing-arrow" aria-hidden="true">→</span>
         </a>
       </li>

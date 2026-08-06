@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-labelledby="title">
+  <title id="title">RBAC and PIM lessons</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 20px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #101820; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 11px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 10px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.3; stroke-opacity: 0.3; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.7; }
+</style>
+
+  <rect class="bg" width="960" height="400"/>
+  
+  <text class="title" x="40" y="44">Lesson: Standing admin is a future incident</text>
+  <text class="sub" x="40" y="68">PIM, least privilege, and reviewing who can still click Owner at 2 a.m.</text>
+  <rect class="panel" x="40" y="130" width="280" height="180" rx="3"/>
+  <text class="tiny" x="60" y="165">AVOID</text>
+  <text class="label" x="60" y="200">Permanent Owner</text>
+  <text class="sub" x="60" y="230">Shared admin accounts</text>
+  <text class="sub" x="60" y="258">Wildcard group grants</text>
+  <text class="sub" x="60" y="286">Secrets in scripts</text>
+  <rect class="panel-accent" x="360" y="130" width="280" height="180" rx="3"/>
+  <text class="tiny" x="380" y="165">PREFER</text>
+  <text class="label" x="380" y="200">PIM eligible roles</text>
+  <text class="sub" x="380" y="230">Scoped RBAC</text>
+  <text class="sub" x="380" y="258">Managed identities</text>
+  <text class="sub" x="380" y="286">Access reviews</text>
+  <rect class="panel-ink" x="680" y="130" width="240" height="180" rx="3"/>
+  <text class="tiny" x="700" y="165" style="fill:#c5d0dc">VERIFY</text>
+  <text class="label-inv" x="700" y="200">Who is standing?</text>
+  <text class="sub" x="700" y="230" style="fill:#c5d0dc">Break-glass alerts</text>
+  <text class="sub" x="700" y="258" style="fill:#c5d0dc">Graph / PowerShell</text>
+  <text class="sub" x="700" y="286" style="fill:#c5d0dc">Quarterly reviews</text>
+
+</svg>

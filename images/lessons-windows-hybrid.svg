@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title">
+  <title id="title">Windows hybrid management path</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 20px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #101820; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 11px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 10px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.3; stroke-opacity: 0.3; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.7; }
+</style>
+
+  <rect class="bg" width="960" height="420"/>
+  
+  <text class="title" x="40" y="44">Lesson: Hybrid Windows is still the blast radius</text>
+  <text class="sub" x="40" y="68">On-prem AD + Entra + Intune/MECM — one identity story or perpetual fire drills</text>
+  <rect class="panel" x="40" y="120" width="260" height="140" rx="3"/>
+  <text class="tiny" x="60" y="150">ON-PREM</text>
+  <text class="label" x="60" y="180">Active Directory</text>
+  <text class="sub" x="60" y="208">GPOs · forests</text>
+  <text class="sub" x="60" y="232">MECM / SCCM</text>
+  <path class="wire-accent" d="M300 190 H360"/>
+  <rect class="panel-accent" x="360" y="120" width="240" height="140" rx="3"/>
+  <text class="tiny" x="380" y="150">SYNC / JOIN</text>
+  <text class="label" x="380" y="180">Entra Connect</text>
+  <text class="sub" x="380" y="208">Hybrid Azure AD Join</text>
+  <text class="sub" x="380" y="232">Token / sync health</text>
+  <path class="wire-accent" d="M600 190 H660"/>
+  <rect class="panel" x="660" y="120" width="260" height="140" rx="3"/>
+  <text class="tiny" x="680" y="150">CLOUD MGMT</text>
+  <text class="label" x="680" y="180">Intune · Autopilot</text>
+  <text class="sub" x="680" y="208">Tenant Attach</text>
+  <text class="sub" x="680" y="232">CA + compliance</text>
+  <rect class="panel-ink" x="40" y="300" width="880" height="80" rx="3"/>
+  <text class="label-inv" x="70" y="348">Lesson learned: fix sync and device identity before blaming Conditional Access</text>
+
+</svg>

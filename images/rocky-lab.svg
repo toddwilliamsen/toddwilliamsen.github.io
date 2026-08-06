@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="title">
+  <title id="title">Rocky Linux lab image and provisioning architecture</title>
+  
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .panel-ink { fill: #101820; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 20px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #101820; }
+  .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #f7f9fb; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 11px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 10px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.3; stroke-opacity: 0.3; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.7; }
+</style>
+
+  <rect class="bg" width="960" height="480"/>
+  
+  <text class="title" x="40" y="44">Secure lab platform — custom Rocky Linux 9.7 images</text>
+  <text class="sub" x="40" y="68">Build once · harden in the image · provision with ARM · govern with Policy</text>
+  <rect class="panel" x="40" y="110" width="200" height="120" rx="3"/>
+  <text class="tiny" x="58" y="140">IMAGE BUILD</text>
+  <text class="label" x="58" y="170">Rocky 9.7 from scratch</text>
+  <text class="sub" x="58" y="200">Python · PWSH Core</text>
+  <text class="sub" x="58" y="225">Agents · baselines</text>
+  <path class="wire-accent" d="M240 170 H290"/>
+  <rect class="panel-accent" x="290" y="110" width="200" height="120" rx="3"/>
+  <text class="tiny" x="308" y="140">GALLERY</text>
+  <text class="label" x="308" y="170">Versioned images</text>
+  <text class="sub" x="308" y="200">Shared for labs</text>
+  <path class="wire-accent" d="M490 170 H540"/>
+  <rect class="panel" x="540" y="110" width="200" height="120" rx="3"/>
+  <text class="tiny" x="558" y="140">PROVISION</text>
+  <text class="label" x="558" y="170">ARM templates</text>
+  <text class="sub" x="558" y="200">Network · identity</text>
+  <text class="sub" x="558" y="225">Policy on create</text>
+  <path class="wire-accent" d="M740 170 H790"/>
+  <rect class="panel-ink" x="790" y="110" width="130" height="120" rx="3"/>
+  <text class="label-inv" x="810" y="165">Self-service</text>
+  <text class="sub" x="805" y="195" style="fill:#c5d0dc">minutes not hours</text>
+  <rect class="panel" x="40" y="280" width="880" height="150" rx="3"/>
+  <text class="tiny" x="70" y="315">OPERATING OUTCOME</text>
+  <text class="sub" x="70" y="348">Developers get isolated labs on demand. Security gets hardened baselines, RBAC, and CSPM (Defender / NIST / CIS) without a separate hardening project after every VM.</text>
+  <text class="sub" x="70" y="378">Lab management app (Azure Web Apps + Python) handles deploy / manage / destroy lifecycle.</text>
+  <text class="sub" x="70" y="408">Lesson: bake controls into the image and the template, or you will re-litigate them every sprint.</text>
+
+</svg>

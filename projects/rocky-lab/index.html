@@ -1,0 +1,96 @@
+---
+layout: default
+title: Rocky Lab Platform
+description: Custom Rocky Linux 9.7 images, ARM-based lab provisioning, and governance for secure developer self-service labs.
+permalink: /projects/rocky-lab/
+---
+
+<article class="article">
+  <header class="article-hero">
+    <div class="shell">
+      <p class="eyebrow">
+        <a href="{{ '/projects/' | relative_url }}">Projects</a>
+        <span aria-hidden="true">/</span>
+        <span>Security &amp; cloud</span>
+      </p>
+      <h1>Rocky Lab Platform</h1>
+      <p class="lede">
+        Custom Rocky Linux 9.7 images built from scratch, provisioned with ARM, and governed so
+        developer labs are fast to create and hard to leave wide open.
+      </p>
+      <p class="meta"><span>Security &amp; cloud</span><span aria-hidden="true">·</span><span>Azure labs · images · IaC</span></p>
+    </div>
+  </header>
+
+  <div class="shell article-body prose">
+    <p>
+      This is the lab platform work: secure-by-default environments for developers to deploy,
+      exercise, and tear down—without waiting on a ticket that takes longer than the experiment.
+    </p>
+
+    <figure>
+      <img src="{{ '/images/rocky-lab.svg' | relative_url }}" alt="Pipeline from Rocky 9.7 image build through gallery, ARM provisioning, and self-service labs">
+      <figcaption>Figure 1. Bake controls into the image and the template—or re-argue them every sprint.</figcaption>
+    </figure>
+
+    <h2>The problem</h2>
+    <p>
+      Ad-hoc lab VMs accumulate drift: missing agents, weak baselines, public endpoints “just for testing,”
+      and no shared identity or policy story. Security reviews become archaeology. Developers wait hours
+      for something that should take minutes.
+    </p>
+
+    <h2>What we built</h2>
+    <h3>1. Rocky Linux 9.7 images from scratch</h3>
+    <p>
+      Custom images—not a lightly edited marketplace default—built so every lab VM starts from a known baseline:
+    </p>
+    <ul>
+      <li>Rocky Linux <strong>9.7</strong> as the guest OS</li>
+      <li><strong>Python</strong> and <strong>PowerShell Core</strong> embedded for automation parity with the rest of the cloud toolchain</li>
+      <li>Hardened configuration baselines baked into the image</li>
+      <li>Cloud agents included so management and monitoring are not optional afterthoughts</li>
+    </ul>
+
+    <h3>2. ARM-based provisioning</h3>
+    <p>
+      Automated VM lifecycle with custom ARM templates: image reference, networking, identity bindings,
+      and policy enforcement at deploy time. The point is convergence—redeploy gets the same shape—
+      not a one-off portal click trail.
+    </p>
+
+    <h3>3. Lab management application</h3>
+    <p>
+      A Python lab management app on Azure Web Apps so developers can <strong>deploy, manage, and destroy</strong>
+      isolated lab environments on demand. Provisioning time dropped from hours to minutes by automating
+      the full VM lifecycle.
+    </p>
+
+    <h3>4. Governance and CSPM</h3>
+    <ul>
+      <li>Azure Policy and RBAC guardrails for lab subscriptions / resource groups</li>
+      <li>Defender for Cloud / CSPM aligned to NIST 800-53 and CIS benchmarks</li>
+      <li>Cloud economics and right-sizing so labs do not quietly become a second production bill</li>
+    </ul>
+
+    <h2>Lessons learned</h2>
+    <ul>
+      <li><strong>Image &gt; after-the-fact hardening.</strong> If SSH policy, agents, and packages are negotiated per VM, you will lose.</li>
+      <li><strong>Template + policy beat wiki.</strong> Networking and identity bindings belong in ARM; deny/deploy policies catch drift.</li>
+      <li><strong>Self-service needs a destroy path.</strong> Labs without teardown become unowned infrastructure.</li>
+      <li><strong>Measure time-to-lab.</strong> “Secure” that takes all afternoon loses to insecure that takes ten minutes—unless secure is also fast.</li>
+    </ul>
+
+    <h2>How this ties to the rest of the site</h2>
+    <ul>
+      <li><a href="{{ '/articles/arm-templates-fundamentals/' | relative_url }}">ARM IaC series</a> — patterns used to provision labs</li>
+      <li><a href="https://github.com/toddwilliamsen/arm-templates">arm-templates</a> — educational samples</li>
+      <li><a href="https://github.com/toddwilliamsen/cloud-powershell">cloud-powershell</a> — build / troubleshoot / secure scripts</li>
+      <li><a href="{{ '/articles/lessons-logging-diagnostics/' | relative_url }}">Logging lessons</a> — why diagnostics belong at create-time</li>
+    </ul>
+
+    <p>
+      <a href="{{ '/projects/' | relative_url }}">← Back to projects</a>
+    </p>
+  </div>
+</article>
