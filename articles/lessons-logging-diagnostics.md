@@ -1,7 +1,9 @@
 ---
 layout: article
 title: "Logging Before the Fire: Lessons from Blind Investigations"
-topic: Lessons · Cloud Basics
+topic: Field Notes
+category: field-notes
+diagram: /images/lessons-logging.svg
 summary: Diagnostics, Entra sign-in logs, and M365 unified audit—basic telemetry concepts learned after needing answers that were never collected.
 author: Todd Williamsen
 date: 2026-08-08
@@ -40,6 +42,3 @@ Basic concept: enable logging. Lesson learned: make logging mandatory at provisi
 
 **Related scripts:** `secure/Enable-ResourceDiagnostics.ps1`, `troubleshoot/Get-M365UnifiedAudit.ps1`, `troubleshoot/Test-AzureDiagnostics.ps1` in [cloud-powershell](https://github.com/toddwilliamsen/cloud-powershell).
 
----
-
-**Lessons:** [← Windows Hybrid]({{ '/articles/lessons-windows-hybrid/' | relative_url }}) · Part 4 · [Next: RBAC →]({{ '/articles/lessons-rbac-least-privilege/' | relative_url }})

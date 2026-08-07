@@ -1,7 +1,9 @@
 ---
 layout: article
 title: "Least Privilege: Lessons from Standing Admin"
-topic: Lessons · Cloud Basics
+topic: Field Notes
+category: field-notes
+diagram: /images/lessons-rbac.svg
 summary: RBAC and PIM fundamentals learned after standing Owner rights and shared admin accounts turned into predictable risk.
 author: Todd Williamsen
 date: 2026-08-11
@@ -46,6 +48,3 @@ Basic concept: least privilege. Lesson learned: measure standing privilege, make
 
 **Related scripts:** `secure/Get-StandingAzureRoleAssignments.ps1`, `secure/Get-PimEligibleRoles.ps1` in [cloud-powershell](https://github.com/toddwilliamsen/cloud-powershell).
 
----
-
-**Lessons:** [← Logging]({{ '/articles/lessons-logging-diagnostics/' | relative_url }}) · Part 5 · [Projects: Rocky lab →]({{ '/projects/rocky-lab/' | relative_url }})

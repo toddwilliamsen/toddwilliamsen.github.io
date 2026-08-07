@@ -14,6 +14,29 @@
   .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 10px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
   .wire { fill: none; stroke: #101820; stroke-width: 1.3; stroke-opacity: 0.3; }
   .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.7; }
+
+  .wire-accent, .flow {
+    stroke-dasharray: 7 11;
+    animation: viz-flow 2.8s linear infinite;
+  }
+  .wire {
+    stroke-dasharray: 3 9;
+    animation: viz-flow 9s linear infinite;
+  }
+  .panel-accent, .dot, .node-pulse {
+    animation: viz-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes viz-flow {
+    to { stroke-dashoffset: -72; }
+  }
+  @keyframes viz-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wire-accent, .flow, .wire, .panel-accent, .dot, .node-pulse { animation: none; }
+  }
+
 </style>
 
   <rect class="bg" width="960" height="420"/>
@@ -22,7 +45,7 @@
   <text class="sub" x="40" y="68">Entra ID sits in front of Azure, M365, and hybrid Windows — treat it that way</text>
   <rect class="panel-ink" x="320" y="110" width="320" height="70" rx="3"/>
   <text class="label-inv" x="390" y="152">Microsoft Entra ID</text>
-  <path class="wire-accent" d="M480 180 V220"/>
+  <path class="wire-accent" d="M480 180 V220"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
   <path class="wire" d="M160 220 H800"/>
   <path class="wire" d="M160 220 V250"/><path class="wire" d="M480 220 V250"/><path class="wire" d="M800 220 V250"/>
   <rect class="panel" x="40" y="250" width="240" height="110" rx="3"/>

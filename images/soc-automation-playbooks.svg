@@ -15,6 +15,29 @@
   .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
   .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
   .dot { fill: #9a4e1a; }
+
+  .wire-accent, .flow {
+    stroke-dasharray: 7 11;
+    animation: viz-flow 2.8s linear infinite;
+  }
+  .wire {
+    stroke-dasharray: 3 9;
+    animation: viz-flow 9s linear infinite;
+  }
+  .panel-accent, .dot, .node-pulse {
+    animation: viz-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes viz-flow {
+    to { stroke-dashoffset: -72; }
+  }
+  @keyframes viz-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wire-accent, .flow, .wire, .panel-accent, .dot, .node-pulse { animation: none; }
+  }
+
 </style>
 
   <rect class="bg" width="960" height="560"/>
@@ -26,7 +49,7 @@
   <text class="tiny" x="58" y="150">DETECT</text>
   <text class="label" x="58" y="180">Sentinel alert</text>
 
-  <path class="wire-accent" d="M200 165 H240"/>
+  <path class="wire-accent" d="M200 165 H240"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
   <polygon points="240,157 252,165 240,173" class="dot"/>
 
   <rect class="panel-accent" x="252" y="110" width="200" height="110" rx="3"/>
@@ -35,7 +58,7 @@
   <text class="sub" x="272" y="190">Sign-in history</text>
   <text class="sub" x="272" y="212">Threat intel · related</text>
 
-  <path class="wire-accent" d="M452 165 H492"/>
+  <path class="wire-accent" d="M452 165 H492"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
 
   <rect class="panel" x="492" y="110" width="200" height="110" rx="3"/>
   <text class="tiny" x="512" y="140">TRIAGE</text>
@@ -43,7 +66,7 @@
   <text class="sub" x="512" y="190">Deduplicate</text>
   <text class="sub" x="512" y="212">Route / suppress</text>
 
-  <path class="wire-accent" d="M692 165 H732"/>
+  <path class="wire-accent" d="M692 165 H732"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
 
   <rect class="panel" x="732" y="110" width="188" height="110" rx="3"/>
   <text class="tiny" x="752" y="140">DECIDE</text>

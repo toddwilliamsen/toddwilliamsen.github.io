@@ -1,7 +1,9 @@
 ---
 layout: article
 title: Azure Landing Zone Security
-topic: Series · Part 3
+topic: Cloud Security
+category: cloud-security
+diagram: /images/landing-zone-structure.svg
 summary: Identity, network segmentation, governance guardrails, and the telemetry architecture that made a better anomaly engine necessary.
 author: Todd Williamsen
 date: 2026-06-15
@@ -81,6 +83,3 @@ To classify anomalies across that surface, I needed:
 
 That became the foundation for the next evolution: **Quantum Helix—a quantum-kernel anomaly engine.**
 
----
-
-**Series:** [← Zero Trust in Azure]({{ '/articles/zero-trust-azure/' | relative_url }}) · Part 3 of 4 · [Next: Quantum Helix →]({{ '/articles/quantum-helix/' | relative_url }})

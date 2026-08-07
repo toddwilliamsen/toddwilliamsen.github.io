@@ -1,7 +1,9 @@
 ---
 layout: article
 title: "Windows Hybrid: Lessons from Devices Caught Between Worlds"
-topic: Lessons · Windows
+topic: Field Notes
+category: field-notes
+diagram: /images/lessons-windows-hybrid.svg
 summary: Hybrid join, Intune, MECM/Tenant Attach, and why Windows device identity still decides whether cloud security policies mean anything.
 author: Todd Williamsen
 date: 2026-08-06
@@ -44,6 +46,3 @@ Basic concept: manage Windows from the cloud. Lesson learned: hybrid identity an
 
 **Related scripts:** `troubleshoot/Test-HybridJoin.ps1`, `troubleshoot/Get-IntuneComplianceSummary.ps1` in [cloud-powershell](https://github.com/toddwilliamsen/cloud-powershell).
 
----
-
-**Lessons:** [← Conditional Access]({{ '/articles/lessons-conditional-access/' | relative_url }}) · Part 3 · [Next: Logging →]({{ '/articles/lessons-logging-diagnostics/' | relative_url }})

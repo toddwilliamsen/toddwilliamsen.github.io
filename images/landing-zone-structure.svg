@@ -15,6 +15,29 @@
   .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
   .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
   .dot { fill: #9a4e1a; }
+
+  .wire-accent, .flow {
+    stroke-dasharray: 7 11;
+    animation: viz-flow 2.8s linear infinite;
+  }
+  .wire {
+    stroke-dasharray: 3 9;
+    animation: viz-flow 9s linear infinite;
+  }
+  .panel-accent, .dot, .node-pulse {
+    animation: viz-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes viz-flow {
+    to { stroke-dashoffset: -72; }
+  }
+  @keyframes viz-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wire-accent, .flow, .wire, .panel-accent, .dot, .node-pulse { animation: none; }
+  }
+
 </style>
 
   <rect class="bg" width="960" height="560"/>
@@ -50,9 +73,9 @@
   <text class="sub" x="660" y="372">Tags &amp; ownership</text>
   <text class="sub" x="660" y="394">Deny / audit / deploy</text>
 
-  <path class="wire-accent" d="M180 420 V450 H480 V470"/>
-  <path class="wire-accent" d="M480 420 V470"/>
-  <path class="wire-accent" d="M780 420 V450 H480 V470"/>
+  <path class="wire-accent" d="M180 420 V450 H480 V470"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M480 420 V470"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M780 420 V450 H480 V470"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
 
   <rect class="panel-accent" x="200" y="470" width="560" height="60" rx="3"/>
   <text class="label" x="230" y="506">Security Operations  ·  Defender + Sentinel + SOAR playbooks</text>

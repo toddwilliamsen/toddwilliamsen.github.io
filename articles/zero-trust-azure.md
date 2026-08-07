@@ -1,7 +1,9 @@
 ---
 layout: article
 title: Zero Trust in Azure
-topic: Series · Part 2
+topic: Cloud Security
+category: cloud-security
+diagram: /images/zero-trust-azure.svg
 summary: Identity-driven segmentation, continuous verification, and Conditional Access enforcement—and why identity telemetry needed a better anomaly engine.
 author: Todd Williamsen
 date: 2026-06-08
@@ -62,6 +64,3 @@ I needed:
 
 That led directly into Landing Zone telemetry analysis—where identity, network, and governance signals land together at scale.
 
----
-
-**Series:** [← SOC Automation Playbooks]({{ '/articles/soc-automation-playbooks/' | relative_url }}) · Part 2 of 4 · [Next: Azure Landing Zone Security →]({{ '/articles/azure-landing-zone-security/' | relative_url }})

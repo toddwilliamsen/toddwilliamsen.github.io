@@ -13,6 +13,29 @@
   .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
   .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
   .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
+
+  .wire-accent, .flow {
+    stroke-dasharray: 7 11;
+    animation: viz-flow 2.8s linear infinite;
+  }
+  .wire {
+    stroke-dasharray: 3 9;
+    animation: viz-flow 9s linear infinite;
+  }
+  .panel-accent, .dot, .node-pulse {
+    animation: viz-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes viz-flow {
+    to { stroke-dashoffset: -72; }
+  }
+  @keyframes viz-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wire-accent, .flow, .wire, .panel-accent, .dot, .node-pulse { animation: none; }
+  }
+
 </style>
 
   <rect class="bg" width="960" height="380"/>
@@ -40,10 +63,10 @@
   <text class="tiny" x="738" y="150" style="fill:#c5d0dc">5 · COOK</text>
   <text class="label-inv" x="738" y="180">Steps · shop · save</text>
 
-  <path class="wire-accent" d="M190 165 H210"/>
-  <path class="wire-accent" d="M360 165 H380"/>
-  <path class="wire-accent" d="M530 165 H550"/>
-  <path class="wire-accent" d="M700 165 H720"/>
+  <path class="wire-accent" d="M190 165 H210"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M360 165 H380"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M530 165 H550"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M700 165 H720"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
 
   <rect class="panel" x="40" y="250" width="880" height="100" rx="3"/>
   <text class="tiny" x="70" y="285">ON-DEVICE BY DEFAULT</text>

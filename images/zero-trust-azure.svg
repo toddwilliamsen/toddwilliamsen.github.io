@@ -15,6 +15,29 @@
   .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
   .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
   .dot { fill: #9a4e1a; }
+
+  .wire-accent, .flow {
+    stroke-dasharray: 7 11;
+    animation: viz-flow 2.8s linear infinite;
+  }
+  .wire {
+    stroke-dasharray: 3 9;
+    animation: viz-flow 9s linear infinite;
+  }
+  .panel-accent, .dot, .node-pulse {
+    animation: viz-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes viz-flow {
+    to { stroke-dashoffset: -72; }
+  }
+  @keyframes viz-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wire-accent, .flow, .wire, .panel-accent, .dot, .node-pulse { animation: none; }
+  }
+
 </style>
 
   <rect class="bg" width="960" height="560"/>
@@ -47,10 +70,10 @@
   <text class="label" x="700" y="420">Continuous verify</text>
   <text class="sub" x="700" y="448">Defender · Sentinel</text>
 
-  <path class="wire-accent" d="M280 210 H410"/>
-  <path class="wire-accent" d="M550 210 H680"/>
-  <path class="wire-accent" d="M280 420 H410"/>
-  <path class="wire-accent" d="M550 420 H680"/>
+  <path class="wire-accent" d="M280 210 H410"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M550 210 H680"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M280 420 H410"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M550 420 H680"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
 
   <path class="wire" d="M170 270 V360"/>
   <path class="wire" d="M790 270 V360"/>

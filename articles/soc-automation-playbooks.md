@@ -1,7 +1,9 @@
 ---
 layout: article
 title: SOC Automation Playbooks
-topic: Series · Part 1
+topic: Cloud Security
+category: cloud-security
+diagram: /images/soc-automation-playbooks.svg
 summary: Building automated triage, enrichment, and response workflows using Sentinel SOAR—and the detection gap that automation exposed.
 author: Todd Williamsen
 date: 2026-06-01
@@ -56,6 +58,3 @@ I needed a detection engine that was:
 
 That realization led directly to the next phase of the work: strengthening identity as the control plane.
 
----
-
-**Series:** Part 1 of 4 · [Next: Zero Trust in Azure →]({{ '/articles/zero-trust-azure/' | relative_url }})

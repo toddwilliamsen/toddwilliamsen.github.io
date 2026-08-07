@@ -15,6 +15,29 @@
   .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
   .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
   .dot { fill: #9a4e1a; }
+
+  .wire-accent, .flow {
+    stroke-dasharray: 7 11;
+    animation: viz-flow 2.8s linear infinite;
+  }
+  .wire {
+    stroke-dasharray: 3 9;
+    animation: viz-flow 9s linear infinite;
+  }
+  .panel-accent, .dot, .node-pulse {
+    animation: viz-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes viz-flow {
+    to { stroke-dashoffset: -72; }
+  }
+  @keyframes viz-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wire-accent, .flow, .wire, .panel-accent, .dot, .node-pulse { animation: none; }
+  }
+
 </style>
 
   <rect class="bg" width="960" height="540"/>
@@ -40,7 +63,7 @@
   <rect class="panel" x="670" y="210" width="220" height="70" rx="3"/>
   <text class="label" x="720" y="252">Sandbox</text>
 
-  <path class="wire-accent" d="M480 280 V310"/>
+  <path class="wire-accent" d="M480 280 V310"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
 
   <rect class="panel" x="80" y="310" width="250" height="180" rx="3"/>
   <text class="tiny" x="100" y="340">POLICY EFFECTS</text>

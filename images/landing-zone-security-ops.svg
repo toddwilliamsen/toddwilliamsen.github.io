@@ -15,6 +15,29 @@
   .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
   .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; }
   .dot { fill: #9a4e1a; }
+
+  .wire-accent, .flow {
+    stroke-dasharray: 7 11;
+    animation: viz-flow 2.8s linear infinite;
+  }
+  .wire {
+    stroke-dasharray: 3 9;
+    animation: viz-flow 9s linear infinite;
+  }
+  .panel-accent, .dot, .node-pulse {
+    animation: viz-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes viz-flow {
+    to { stroke-dashoffset: -72; }
+  }
+  @keyframes viz-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wire-accent, .flow, .wire, .panel-accent, .dot, .node-pulse { animation: none; }
+  }
+
 </style>
 
   <rect class="bg" width="960" height="540"/>
@@ -42,13 +65,13 @@
   <text class="sub" x="300" y="294">Defender for Cloud</text>
   <text class="sub" x="300" y="318">Activity / sign-in logs</text>
 
-  <path class="wire-accent" d="M500 270 H560"/>
+  <path class="wire-accent" d="M500 270 H560"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
 
   <rect class="panel-ink" x="560" y="200" width="180" height="140" rx="3"/>
   <text class="label-inv" x="590" y="260">Log Analytics</text>
   <text class="sub" x="600" y="290" style="fill:#c5d0dc">Central workspace</text>
 
-  <path class="wire-accent" d="M740 270 H800"/>
+  <path class="wire-accent" d="M740 270 H800"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
 
   <rect class="panel" x="800" y="120" width="120" height="80" rx="3"/>
   <text class="label" x="822" y="166">Sentinel</text>

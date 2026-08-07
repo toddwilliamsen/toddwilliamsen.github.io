@@ -1,7 +1,9 @@
 ---
 layout: article
 title: "Identity First: Lessons from Azure and M365"
-topic: Lessons · Cloud Basics
+topic: Field Notes
+category: field-notes
+diagram: /images/lessons-identity.svg
 summary: Basic identity concepts, learned the hard way—Entra ID as the control plane for Azure, Microsoft 365, and hybrid Windows.
 author: Todd Williamsen
 date: 2026-08-01
@@ -44,6 +46,3 @@ Basic concept: centralize identity. Lesson learned: centralize it *on purpose*, 
 
 **Related scripts:** `troubleshoot/Get-EntraSignInFailures.ps1`, `troubleshoot/Test-HybridJoin.ps1` in [cloud-powershell](https://github.com/toddwilliamsen/cloud-powershell).
 
----
-
-**Lessons:** Part 1 · [Next: Conditional Access →]({{ '/articles/lessons-conditional-access/' | relative_url }})

@@ -1,0 +1,34 @@
+{% assign active = include.active | default: page.category %}
+<aside class="blog-sidebar" aria-label="Writing categories">
+  <p class="blog-sidebar-label">Categories</p>
+  <nav class="blog-sidebar-nav">
+    <a class="blog-sidebar-all{% unless active %} is-active{% endunless %}" href="{{ '/writing/' | relative_url }}">
+      <span class="blog-cat-mark" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="14" height="14"><circle class="viz-node" cx="8" cy="8" r="3"/></svg>
+      </span>
+      All writing
+    </a>
+    {% for cat in site.data.categories %}
+      {% assign cat_posts = site.pages | where: "category", cat.slug | sort: "date" | reverse %}
+      <a class="blog-sidebar-link{% if active == cat.slug %} is-active{% endif %}" href="{{ '/writing/' | relative_url }}#{{ cat.slug }}">
+        <span class="blog-cat-mark" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14"><circle class="viz-node" cx="8" cy="8" r="3"/></svg>
+        </span>
+        <span class="blog-sidebar-text">
+          <span class="blog-sidebar-name">{{ cat.label }}</span>
+          <span class="blog-sidebar-count">{{ cat_posts.size }}</span>
+        </span>
+      </a>
+    {% endfor %}
+  </nav>
+
+  <p class="blog-sidebar-label blog-sidebar-label-spaced">Projects</p>
+  <nav class="blog-sidebar-nav">
+    <a class="blog-sidebar-link" href="{{ '/projects/rocky-lab/' | relative_url }}">Rocky Lab</a>
+    <a class="blog-sidebar-link" href="{{ '/projects/look-n-cook/' | relative_url }}">Look n Cook</a>
+    <a class="blog-sidebar-link" href="https://github.com/toddwilliamsen/quantumhelix">Quantum Helix</a>
+    <a class="blog-sidebar-link" href="https://github.com/toddwilliamsen/arm-templates">arm-templates</a>
+    <a class="blog-sidebar-link" href="https://github.com/toddwilliamsen/cloud-powershell">cloud-powershell</a>
+    <a class="blog-sidebar-link" href="{{ '/projects/' | relative_url }}">All projects →</a>
+  </nav>
+</aside>

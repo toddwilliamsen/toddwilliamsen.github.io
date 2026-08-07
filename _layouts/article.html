@@ -1,12 +1,22 @@
 ---
 layout: default
 ---
+{% assign cat_label = page.topic %}
+{% for cat in site.data.categories %}
+  {% if cat.slug == page.category %}
+    {% assign cat_label = cat.label %}
+  {% endif %}
+{% endfor %}
+
 <article class="article">
   <header class="article-hero">
     <div class="shell">
       <p class="eyebrow">
-        <a href="{{ '/#writing' | relative_url }}">Writing</a>
-        {% if page.topic %}
+        <a href="{{ '/writing/' | relative_url }}">Writing</a>
+        {% if page.category %}
+          <span aria-hidden="true">/</span>
+          <a href="{{ '/writing/' | relative_url }}#{{ page.category }}">{{ cat_label }}</a>
+        {% elsif page.topic %}
           <span aria-hidden="true">/</span>
           <span>{{ page.topic }}</span>
         {% endif %}
@@ -25,7 +35,15 @@ layout: default
     </div>
   </header>
 
-  <div class="shell article-body prose">
-    {{ content }}
+  <div class="shell blog-layout">
+    {% include blog-sidebar.html active=page.category %}
+    <div class="blog-main article-body prose">
+      {{ content }}
+      {% if page.category %}
+        <p class="more-in-category">
+          <a href="{{ '/writing/' | relative_url }}#{{ page.category }}">More in {{ cat_label }} →</a>
+        </p>
+      {% endif %}
+    </div>
   </div>
 </article>

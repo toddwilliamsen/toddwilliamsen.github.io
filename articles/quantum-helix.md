@@ -1,7 +1,9 @@
 ---
 layout: article
 title: Quantum Helix
-topic: Series · Part 4
+topic: Cloud Security
+category: cloud-security
+diagram: /images/quantum-helix.svg
 summary: A quantum-kernel anomaly engine for identity, network, and governance telemetry—built to test whether quantum techniques can offer practical value without quantum hardware.
 author: Todd Williamsen
 date: 2026-06-22
@@ -66,6 +68,3 @@ The most interesting part has been watching where the quantum kernel diverges fr
 
 [View Quantum Helix on GitHub →](https://github.com/toddwilliamsen/quantumhelix)
 
----
-
-**Series:** [← Azure Landing Zone Security]({{ '/articles/azure-landing-zone-security/' | relative_url }}) · Part 4 of 4 · [← Back to writing]({{ '/#writing' | relative_url }})

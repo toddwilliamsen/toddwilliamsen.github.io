@@ -1,0 +1,57 @@
+---
+layout: default
+title: Writing
+description: Notes on cloud security, ARM templates, identity, and whatever else is on the workbench.
+permalink: /writing/
+body_class: is-writing
+---
+
+<article class="article">
+  <header class="article-hero">
+    <div class="shell">
+      <p class="eyebrow">Writing</p>
+      <h1>Engineering notes</h1>
+      <p class="lede">
+        Cloud security, infrastructure as code, field lessons, and the occasional side project—
+        written as I work through them, not as a curriculum.
+      </p>
+    </div>
+  </header>
+
+  <div class="shell blog-layout">
+    {% include blog-sidebar.html %}
+
+    <div class="blog-main">
+      {% assign posts = site.pages | where_exp: "p", "p.category != nil" | sort: "date" | reverse %}
+
+      {% for cat in site.data.categories %}
+        {% assign cat_posts = posts | where: "category", cat.slug %}
+        {% if cat_posts.size > 0 %}
+          <section class="blog-category" id="{{ cat.slug }}">
+            <div class="section-head">
+              <p class="section-label">{{ cat.label }}</p>
+              <h2>{{ cat.label }}</h2>
+            </div>
+            <ul class="writing-list writing-list-thumbs">
+              {% for post in cat_posts %}
+                <li class="writing-item reveal">
+                  <a href="{{ post.url | relative_url }}">
+                    {% if post.diagram %}
+                      <span class="writing-thumb" aria-hidden="true">
+                        <img src="{{ post.diagram | relative_url }}" alt="">
+                      </span>
+                    {% endif %}
+                    <span class="writing-topic">{{ post.date | date: '%b %-d, %Y' }}</span>
+                    <h3 class="writing-title">{{ post.title }}</h3>
+                    <p class="writing-blurb">{{ post.summary | default: post.description }}</p>
+                    <span class="writing-arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</article>

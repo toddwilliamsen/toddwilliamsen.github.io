@@ -1,7 +1,9 @@
 ---
 layout: article
 title: Advanced ARM Patterns
-topic: IaC Series · Part 3
+topic: ARM / IaC
+category: arm
+diagram: /images/arm-advanced.svg
 summary: Copy loops, conditions, what-if, and incremental vs complete mode—advanced ARM with fewer clever tricks and fewer 2 a.m. rollbacks.
 author: Todd Williamsen
 date: 2026-07-15
@@ -110,6 +112,3 @@ What-if this against a disposable RG before you get comfortable. Complete mode i
 
 Next: the nuances—API versions, secrets, RBAC races, drift, and all the ways a green deployment can still be lying to you.
 
----
-
-**IaC Series:** [← Modular ARM Design]({{ '/articles/arm-modular-design/' | relative_url }}) · Part 3 of 4 · [Next: ARM Nuances →]({{ '/articles/arm-nuances/' | relative_url }})

@@ -1,7 +1,9 @@
 ---
 layout: article
 title: ARM Templates Fundamentals
-topic: IaC Series · Part 1
+topic: ARM / IaC
+category: arm
+diagram: /images/arm-fundamentals.svg
 summary: What Azure Resource Manager templates actually are, how a deployment converges, and the building blocks worth learning before the JSON starts nesting itself.
 author: Todd Williamsen
 date: 2026-07-01
@@ -120,6 +122,3 @@ az deployment group create \
 
 Next up: composing templates so networking, identity, and workloads stay modular—without summoning a single 4,000-line JSON boss fight.
 
----
-
-**IaC Series:** Part 1 of 4 · [Next: Modular ARM Design →]({{ '/articles/arm-modular-design/' | relative_url }})

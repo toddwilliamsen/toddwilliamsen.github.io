@@ -1,7 +1,9 @@
 ---
 layout: article
 title: ARM Nuances in Production
-topic: IaC Series · Part 4
+topic: ARM / IaC
+category: arm
+diagram: /images/arm-nuances.svg
 summary: API versions, secrets, RBAC races, complete-mode risk, and drift—the gap between “deployment succeeded” and “we’re actually safe.”
 author: Todd Williamsen
 date: 2026-07-22
@@ -164,9 +166,3 @@ Full repo: [github.com/toddwilliamsen/arm-templates](https://github.com/toddwill
 ARM mastery isn’t memorizing every function. It’s encoding safe defaults: pinned API versions, no secrets in Git, deterministic names, reviewed what-if, and policy as backup for the days humans are human.
 
 That’s how infrastructure as code becomes a control plane—not a collection of templates that happened to deploy once and then entered local legend.
-
-[← Back to writing]({{ '/#writing' | relative_url }})
-
----
-
-**IaC Series:** [← Advanced ARM Patterns]({{ '/articles/arm-advanced-patterns/' | relative_url }}) · Part 4 of 4

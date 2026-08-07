@@ -1,7 +1,9 @@
 ---
 layout: article
 title: Modular ARM Design
-topic: IaC Series · Part 2
+topic: ARM / IaC
+category: arm
+diagram: /images/arm-modular.svg
 summary: Parameters, dependencies, nested and linked templates—and how to stop shipping one gigantic JSON file that only one person understands (and that person is on PTO).
 author: Todd Williamsen
 date: 2026-07-08
@@ -104,6 +106,3 @@ In a real pipeline you’d usually **link** `network.json` from a versioned arti
 
 Next: copy loops, conditions, deployment modes, what-if, and the special joy of complete mode.
 
----
-
-**IaC Series:** [← ARM Fundamentals]({{ '/articles/arm-templates-fundamentals/' | relative_url }}) · Part 2 of 4 · [Next: Advanced ARM Patterns →]({{ '/articles/arm-advanced-patterns/' | relative_url }})

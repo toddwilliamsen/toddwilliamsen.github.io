@@ -14,6 +14,29 @@
   .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 10px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
   .wire { fill: none; stroke: #101820; stroke-width: 1.3; stroke-opacity: 0.3; }
   .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.7; }
+
+  .wire-accent, .flow {
+    stroke-dasharray: 7 11;
+    animation: viz-flow 2.8s linear infinite;
+  }
+  .wire {
+    stroke-dasharray: 3 9;
+    animation: viz-flow 9s linear infinite;
+  }
+  .panel-accent, .dot, .node-pulse {
+    animation: viz-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes viz-flow {
+    to { stroke-dashoffset: -72; }
+  }
+  @keyframes viz-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wire-accent, .flow, .wire, .panel-accent, .dot, .node-pulse { animation: none; }
+  }
+
 </style>
 
   <rect class="bg" width="960" height="400"/>
@@ -25,13 +48,13 @@
   <rect class="panel" x="40" y="250" width="180" height="100" rx="3"/>
   <text class="label" x="70" y="295">M365 / Entra</text>
   <rect class="panel" x="40" y="185" width="180" height="50" rx="3" opacity="0"/>
-  <path class="wire-accent" d="M220 170 H280"/><path class="wire-accent" d="M220 300 H280"/>
+  <path class="wire-accent" d="M220 170 H280"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path><path class="wire-accent" d="M220 300 H280"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
   <path class="wire" d="M280 170 V300"/>
   <rect class="panel-accent" x="280" y="180" width="240" height="110" rx="3"/>
   <text class="tiny" x="300" y="215">COLLECT</text>
   <text class="label" x="300" y="245">Diagnostics · audit</text>
   <text class="sub" x="300" y="272">Sign-in · UAL</text>
-  <path class="wire-accent" d="M520 235 H580"/>
+  <path class="wire-accent" d="M520 235 H580"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
   <rect class="panel-ink" x="580" y="160" width="340" height="150" rx="3"/>
   <text class="tiny" x="600" y="195" style="fill:#c5d0dc">USE</text>
   <text class="label-inv" x="600" y="230">Log Analytics · Sentinel</text>

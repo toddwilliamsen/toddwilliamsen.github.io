@@ -1,167 +1,67 @@
 ---
 layout: home
 title: Todd Williamsen
-description: Senior Cloud Security Engineer specializing in Azure security architecture, hybrid identity, governance, and automation.
+description: Cloud security engineer writing about Azure, identity, ARM, automation, and side projects.
 ---
 
 <section class="hero">
   <div class="hero-plane" aria-hidden="true">
     <svg class="diagram" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice" role="presentation">
-      <path class="wire" d="M180 120 H1260" />
-      <path class="wire" d="M220 240 H1180" />
-      <path class="wire" d="M280 360 H1120" />
-      <path class="wire" d="M340 480 H1060" />
-      <path class="wire" d="M420 600 H980" />
+      <path class="wire" d="M120 90 H1320" />
+      <path class="wire" d="M160 180 H1280" />
+      <path class="wire" d="M200 270 H1240" />
+      <path class="wire" d="M240 360 H1200" />
+      <path class="wire" d="M280 450 H1160" />
+      <path class="wire" d="M320 540 H1120" />
+      <path class="wire" d="M360 630 H1080" />
 
-      <path class="wire" d="M980 80 V640" />
-      <path class="wire" d="M1120 120 V580" />
-      <path class="wire" d="M1260 160 V520" />
+      <path class="wire" d="M900 60 V660" />
+      <path class="wire" d="M1040 100 V620" />
+      <path class="wire" d="M1180 140 V580" />
+      <path class="wire" d="M1320 180 V540" />
 
-      <path class="accent pulse" d="M720 40 V680" />
-      <path class="accent pulse" d="M160 360 H1280" />
+      <path class="accent pulse" d="M720 30 V690" />
+      <path class="accent pulse-slow" d="M140 360 H1300" />
+      <path class="accent pulse" d="M200 120 L1180 600" />
 
-      <circle class="mark" cx="720" cy="360" r="4" />
-      <circle class="mark" cx="980" cy="240" r="3" />
-      <circle class="mark" cx="1120" cy="480" r="3" />
+      <circle class="mark mark-blink" cx="720" cy="360" r="4" />
+      <circle class="mark mark-blink-2" cx="900" cy="270" r="3" />
+      <circle class="mark mark-blink-3" cx="1040" cy="450" r="3" />
+      <circle class="mark mark-blink" cx="1180" cy="180" r="2.5" />
+      <circle class="mark mark-blink-2" cx="280" cy="540" r="2.5" />
     </svg>
   </div>
 
   <div class="shell hero-copy reveal">
     <p class="brand">Todd Williamsen</p>
-    <h1>Senior Cloud Security Engineer.</h1>
+    <h1>Engineering notes from the cloud.</h1>
     <p class="hero-support">
-      I design and secure Azure environments—identity, governance, automation, and architecture
-      that holds under pressure. Day to day that means Entra&nbsp;ID, Defender, Sentinel, and ARM:
-      making the secure path the default, not a follow-up project.
+      I work in Azure security—identity, governance, automation—and write about the pieces that
+      actually matter when you’re shipping. ARM templates, field lessons, research experiments,
+      and the occasional side project that has nothing to do with any of that.
     </p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#writing">Read the writing</a>
+      <a class="btn btn-primary" href="{{ '/writing/' | relative_url }}">Read the writing</a>
       <a class="btn btn-ghost" href="{{ '/projects/' | relative_url }}">Projects</a>
     </div>
   </div>
 </section>
 
-<section class="section" id="focus">
+<section class="section" id="about">
   <div class="shell">
     <div class="section-head reveal">
-      <p class="section-label">Focus</p>
-      <h2>Where the work concentrates</h2>
+      <p class="section-label">About</p>
+      <h2>Cloud security by day</h2>
     </div>
     <div class="focus-copy reveal reveal-delay-1">
       <p>
-        Day to day, I work across <strong>Azure security architecture</strong>,
-        <strong>Entra ID and hybrid identity</strong>,
-        <strong>Microsoft Defender for Cloud</strong>,
-        <strong>Sentinel</strong>, and
-        <strong>Python / PowerShell automation</strong>.
-        The goal is simple: make secure defaults repeatable, enforceable, and boring—
-        because boring security is the kind that survives production.
+        Senior Cloud Security Engineer focused on Azure architecture, Entra&nbsp;ID and hybrid identity,
+        Defender, Sentinel, and the automation that keeps guardrails boring and repeatable.
       </p>
       <p>
-        Side projects live on the <a href="{{ '/projects/' | relative_url }}">Projects</a> page.
-        Some are serious (Quantum Helix). Some are not (Look n Cook).
-        They don’t share a headline for a reason.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="projects">
-  <div class="shell">
-    <div class="section-head reveal">
-      <p class="section-label">Projects</p>
-      <h2>Kept in separate lanes</h2>
-      <p>Security work and everything else don’t mix.</p>
-    </div>
-
-    <div class="project-lanes reveal">
-      <div class="project-lane">
-        <p class="section-label">Security &amp; cloud</p>
-        <ul class="writing-list">
-          <li class="writing-item">
-            <a href="https://github.com/toddwilliamsen/quantumhelix">
-              <span class="writing-topic">Research</span>
-              <h3 class="writing-title">Quantum Helix</h3>
-              <p class="writing-blurb">Quantum-kernel anomaly detection for cloud telemetry—asking whether the math helps without real quantum hardware.</p>
-              <span class="writing-arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li class="writing-item">
-            <a href="{{ '/projects/rocky-lab/' | relative_url }}">
-              <span class="writing-topic">Labs</span>
-              <h3 class="writing-title">Rocky Lab Platform</h3>
-              <p class="writing-blurb">Custom Rocky 9.7 images, ARM provisioning, and self-service secure labs.</p>
-              <span class="writing-arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li class="writing-item">
-            <a href="https://github.com/toddwilliamsen/arm-templates">
-              <span class="writing-topic">IaC</span>
-              <h3 class="writing-title">ARM Templates</h3>
-              <p class="writing-blurb">Sample templates for the IaC series—modular, parameterized, and meant to stay readable.</p>
-              <span class="writing-arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li class="writing-item">
-            <a href="https://github.com/toddwilliamsen/cloud-powershell">
-              <span class="writing-topic">Scripts</span>
-              <h3 class="writing-title">cloud-powershell</h3>
-              <p class="writing-blurb">Troubleshoot, build, and secure scripts for Azure, Entra, M365, and Windows hybrid.</p>
-              <span class="writing-arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="project-lane">
-        <p class="section-label">Other</p>
-        <ul class="writing-list">
-          <li class="writing-item">
-            <a href="{{ '/projects/look-n-cook/' | relative_url }}">
-              <span class="writing-topic">Mobile</span>
-              <h3 class="writing-title">Look n Cook</h3>
-              <p class="writing-blurb">On-device cooking assistant—scan ingredients, match recipes, stay private.</p>
-              <span class="writing-arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-        </ul>
-        <p class="lane-note">
-          <a href="{{ '/projects/' | relative_url }}">See all projects →</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="background">
-  <div class="shell">
-    <div class="section-head reveal">
-      <p class="section-label">Background</p>
-      <h2>Built in operations, sharpened in cloud security</h2>
-    </div>
-    <div class="focus-copy reveal reveal-delay-1">
-      <p>
-        I’m a <strong>Senior Cloud Security Engineer</strong> focused on Azure security architecture,
-        hybrid identity, governance, and automation. I build secure lab and workload environments,
-        CSPM aligned to NIST and CIS, and policy/RBAC guardrails that keep their shape long after
-        the design review ends.
-      </p>
-      <p>
-        That sits on a long operational foundation: Tier&nbsp;3 escalation for hybrid
-        Entra&nbsp;ID / Active Directory failures, Conditional Access and PIM for Zero Trust access,
-        Azure compute and SQL posture under incident pressure, and cloud-attached endpoint strategy
-        across large hybrid estates.
-      </p>
-      <p>
-        Earlier, I led engineering for massive modern-management environments—including a MECM estate
-        supporting <strong>170,000+ endpoints</strong> in regulated healthcare under HIPAA, CIS, and
-        NIST expectations. The through-line is the same: secure the control plane, encode guardrails
-        in the platform, and keep identity, configuration, and detection close enough to operations
-        that security survives delivery pressure.
-      </p>
-      <p>
-        In short: make sure the cloud doesn’t fall over—especially because someone forgot identity,
-        governance, or automation.
+        Earlier: Tier&nbsp;3 hybrid identity operations, Conditional Access and PIM, and modern management
+        for large regulated estates. The through-line is the same—secure the control plane, encode
+        defaults in the platform, and write down what breaks.
       </p>
     </div>
   </div>
@@ -171,133 +71,72 @@ description: Senior Cloud Security Engineer specializing in Azure security archi
   <div class="shell">
     <div class="section-head reveal">
       <p class="section-label">Writing</p>
-      <h2>Cloud security engineering series</h2>
-      <p>A chronological progression through SOAR automation, Zero Trust identity, Landing Zone architecture, and quantum-kernel anomaly detection—the parts of Azure security that matter, and the parts that break.</p>
+      <h2>Recent notes</h2>
+      <p>Browse by category on the <a href="{{ '/writing/' | relative_url }}">writing</a> page.</p>
+    </div>
+
+    <ul class="writing-list">
+      {% assign posts = site.pages | where_exp: "p", "p.category != nil" | sort: "date" | reverse %}
+      {% for post in posts limit: 6 %}
+        {% assign cat_label = post.topic %}
+        {% for cat in site.data.categories %}
+          {% if cat.slug == post.category %}
+            {% assign cat_label = cat.label %}
+          {% endif %}
+        {% endfor %}
+        <li class="writing-item reveal">
+          <a href="{{ post.url | relative_url }}">
+            <span class="writing-topic">{{ cat_label }} · {{ post.date | date: '%b %-d' }}</span>
+            <h3 class="writing-title">{{ post.title }}</h3>
+            <p class="writing-blurb">{{ post.summary | default: post.description }}</p>
+            <span class="writing-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <p class="lane-note reveal" style="margin-top: 1.5rem;">
+      <a href="{{ '/writing/' | relative_url }}">All writing →</a>
+    </p>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="shell">
+    <div class="section-head reveal">
+      <p class="section-label">Projects</p>
+      <h2>Also on the workbench</h2>
     </div>
 
     <ul class="writing-list">
       <li class="writing-item reveal">
-        <a href="{{ '/articles/soc-automation-playbooks/' | relative_url }}">
-          <span class="writing-topic">Part 1 · June 1</span>
-          <h3 class="writing-title">SOC Automation Playbooks</h3>
-          <p class="writing-blurb">Sentinel SOAR triage, enrichment, and response—and the detection gap automation exposed.</p>
-          <span class="writing-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-      <li class="writing-item reveal reveal-delay-1">
-        <a href="{{ '/articles/zero-trust-azure/' | relative_url }}">
-          <span class="writing-topic">Part 2 · June 8</span>
-          <h3 class="writing-title">Zero Trust in Azure</h3>
-          <p class="writing-blurb">Identity as the control plane, continuous verification, and noisy high-dimensional telemetry.</p>
-          <span class="writing-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-      <li class="writing-item reveal reveal-delay-2">
-        <a href="{{ '/articles/azure-landing-zone-security/' | relative_url }}">
-          <span class="writing-topic">Part 3 · June 15</span>
-          <h3 class="writing-title">Azure Landing Zone Security</h3>
-          <p class="writing-blurb">Identity, network, and governance as one telemetry surface that demanded better anomaly scoring.</p>
-          <span class="writing-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-      <li class="writing-item reveal">
-        <a href="{{ '/articles/quantum-helix/' | relative_url }}">
-          <span class="writing-topic">Part 4 · June 22</span>
+        <a href="https://github.com/toddwilliamsen/quantumhelix">
+          <span class="writing-topic">Research</span>
           <h3 class="writing-title">Quantum Helix</h3>
-          <p class="writing-blurb">A quantum-kernel anomaly engine asking whether quantum techniques help without quantum hardware.</p>
-          <span class="writing-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-    </ul>
-
-    <div class="section-head reveal" style="margin-top: clamp(3rem, 6vw, 4rem);">
-      <p class="section-label">Writing</p>
-      <h2>Infrastructure as Code with ARM</h2>
-      <p>Basic to advanced Azure Resource Manager templates—with samples in <a href="https://github.com/toddwilliamsen/arm-templates">toddwilliamsen/arm-templates</a>.</p>
-    </div>
-
-    <ul class="writing-list">
-      <li class="writing-item reveal">
-        <a href="{{ '/articles/arm-templates-fundamentals/' | relative_url }}">
-          <span class="writing-topic">Part 1 · July 1</span>
-          <h3 class="writing-title">ARM Templates Fundamentals</h3>
-          <p class="writing-blurb">Schema, parameters, resources, API versions, and how Resource Manager converges desired state.</p>
+          <p class="writing-blurb">Quantum-kernel anomaly detection for cloud telemetry.</p>
           <span class="writing-arrow" aria-hidden="true">→</span>
         </a>
       </li>
       <li class="writing-item reveal reveal-delay-1">
-        <a href="{{ '/articles/arm-modular-design/' | relative_url }}">
-          <span class="writing-topic">Part 2 · July 8</span>
-          <h3 class="writing-title">Modular ARM Design</h3>
-          <p class="writing-blurb">Parameters files, dependencies, linked templates, and outputs as the integration API.</p>
+        <a href="{{ '/projects/rocky-lab/' | relative_url }}">
+          <span class="writing-topic">Labs</span>
+          <h3 class="writing-title">Rocky Lab Platform</h3>
+          <p class="writing-blurb">Custom Rocky 9.7 images, ARM provisioning, self-service labs.</p>
           <span class="writing-arrow" aria-hidden="true">→</span>
         </a>
       </li>
       <li class="writing-item reveal reveal-delay-2">
-        <a href="{{ '/articles/arm-advanced-patterns/' | relative_url }}">
-          <span class="writing-topic">Part 3 · July 15</span>
-          <h3 class="writing-title">Advanced ARM Patterns</h3>
-          <p class="writing-blurb">Copy loops, conditions, what-if gates, and incremental versus complete deployment modes.</p>
-          <span class="writing-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-      <li class="writing-item reveal">
-        <a href="{{ '/articles/arm-nuances/' | relative_url }}">
-          <span class="writing-topic">Part 4 · July 22</span>
-          <h3 class="writing-title">ARM Nuances in Production</h3>
-          <p class="writing-blurb">Secrets, RBAC races, API version traps, drift, and the gaps a green deploy can hide.</p>
+        <a href="{{ '/projects/look-n-cook/' | relative_url }}">
+          <span class="writing-topic">Mobile</span>
+          <h3 class="writing-title">Look n Cook</h3>
+          <p class="writing-blurb">On-device cooking assistant—private by design.</p>
           <span class="writing-arrow" aria-hidden="true">→</span>
         </a>
       </li>
     </ul>
 
-    <div class="section-head reveal" style="margin-top: clamp(3rem, 6vw, 4rem);">
-      <p class="section-label">Writing</p>
-      <h2>Lessons from the field</h2>
-      <p>Basic cloud, M365, and Windows concepts—written as lessons learned. Companion scripts in <a href="https://github.com/toddwilliamsen/cloud-powershell">toddwilliamsen/cloud-powershell</a>.</p>
-    </div>
-
-    <ul class="writing-list">
-      <li class="writing-item reveal">
-        <a href="{{ '/articles/lessons-identity-entra-m365/' | relative_url }}">
-          <span class="writing-topic">Part 1 · Aug 1</span>
-          <h3 class="writing-title">Identity First</h3>
-          <p class="writing-blurb">Entra ID as the control plane for Azure, Microsoft 365, and hybrid Windows.</p>
-          <span class="writing-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-      <li class="writing-item reveal reveal-delay-1">
-        <a href="{{ '/articles/lessons-conditional-access/' | relative_url }}">
-          <span class="writing-topic">Part 2 · Aug 4</span>
-          <h3 class="writing-title">Conditional Access</h3>
-          <p class="writing-blurb">Policies that drift, exclusions that age, and admin paths that need teeth first.</p>
-          <span class="writing-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-      <li class="writing-item reveal reveal-delay-2">
-        <a href="{{ '/articles/lessons-windows-hybrid/' | relative_url }}">
-          <span class="writing-topic">Part 3 · Aug 6</span>
-          <h3 class="writing-title">Windows Hybrid</h3>
-          <p class="writing-blurb">Hybrid join, Intune/MECM, and why device identity still decides if CA means anything.</p>
-          <span class="writing-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-      <li class="writing-item reveal">
-        <a href="{{ '/articles/lessons-logging-diagnostics/' | relative_url }}">
-          <span class="writing-topic">Part 4 · Aug 8</span>
-          <h3 class="writing-title">Logging Before the Fire</h3>
-          <p class="writing-blurb">Azure diagnostics and M365 unified audit—turn collection on before the incident.</p>
-          <span class="writing-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-      <li class="writing-item reveal">
-        <a href="{{ '/articles/lessons-rbac-least-privilege/' | relative_url }}">
-          <span class="writing-topic">Part 5 · Aug 11</span>
-          <h3 class="writing-title">Least Privilege</h3>
-          <p class="writing-blurb">Standing Owner, PIM culture, and reviewing both Azure and M365 admin planes.</p>
-          <span class="writing-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-    </ul>
+    <p class="lane-note reveal" style="margin-top: 1.5rem;">
+      <a href="{{ '/projects/' | relative_url }}">All projects →</a>
+    </p>
   </div>
 </section>

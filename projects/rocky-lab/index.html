@@ -11,14 +11,14 @@ permalink: /projects/rocky-lab/
       <p class="eyebrow">
         <a href="{{ '/projects/' | relative_url }}">Projects</a>
         <span aria-hidden="true">/</span>
-        <span>Security &amp; cloud</span>
+        <span>Labs</span>
       </p>
       <h1>Rocky Lab Platform</h1>
       <p class="lede">
         Custom Rocky Linux 9.7 images built from scratch, provisioned with ARM, and governed so
         developer labs are fast to create and hard to leave wide open.
       </p>
-      <p class="meta"><span>Security &amp; cloud</span><span aria-hidden="true">·</span><span>Azure labs · images · IaC</span></p>
+      <p class="meta"><span>Azure labs</span><span aria-hidden="true">·</span><span>images · IaC</span></p>
     </div>
   </header>
 
@@ -28,7 +28,7 @@ permalink: /projects/rocky-lab/
       exercise, and tear down—without waiting on a ticket that takes longer than the experiment.
     </p>
 
-    <figure>
+    <figure class="project-figure figure-lead">
       <img src="{{ '/images/rocky-lab.svg' | relative_url }}" alt="Pipeline from Rocky 9.7 image build through gallery, ARM provisioning, and self-service labs">
       <figcaption>Figure 1. Bake controls into the image and the template—or re-argue them every sprint.</figcaption>
     </figure>
@@ -79,14 +79,6 @@ permalink: /projects/rocky-lab/
       <li><strong>Template + policy beat wiki.</strong> Networking and identity bindings belong in ARM; deny/deploy policies catch drift.</li>
       <li><strong>Self-service needs a destroy path.</strong> Labs without teardown become unowned infrastructure.</li>
       <li><strong>Measure time-to-lab.</strong> “Secure” that takes all afternoon loses to insecure that takes ten minutes—unless secure is also fast.</li>
-    </ul>
-
-    <h2>How this ties to the rest of the site</h2>
-    <ul>
-      <li><a href="{{ '/articles/arm-templates-fundamentals/' | relative_url }}">ARM IaC series</a> — patterns used to provision labs</li>
-      <li><a href="https://github.com/toddwilliamsen/arm-templates">arm-templates</a> — educational samples</li>
-      <li><a href="https://github.com/toddwilliamsen/cloud-powershell">cloud-powershell</a> — build / troubleshoot / secure scripts</li>
-      <li><a href="{{ '/articles/lessons-logging-diagnostics/' | relative_url }}">Logging lessons</a> — why diagnostics belong at create-time</li>
     </ul>
 
     <p>
