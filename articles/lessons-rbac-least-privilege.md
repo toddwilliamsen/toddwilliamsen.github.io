@@ -6,7 +6,7 @@ category: field-notes
 diagram: /images/lessons-rbac.svg
 summary: RBAC and PIM fundamentals learned after standing Owner rights and shared admin accounts turned into predictable risk.
 author: Todd Williamsen
-date: 2026-08-11
+date: 2025-08-11
 description: Lessons learned on Azure RBAC, Entra PIM, managed identities, and removing standing administrative access.
 permalink: /articles/lessons-rbac-least-privilege/
 ---

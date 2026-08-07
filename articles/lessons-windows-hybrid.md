@@ -6,7 +6,7 @@ category: field-notes
 diagram: /images/lessons-windows-hybrid.svg
 summary: Hybrid join, Intune, MECM/Tenant Attach, and why Windows device identity still decides whether cloud security policies mean anything.
 author: Todd Williamsen
-date: 2026-08-06
+date: 2025-08-06
 description: Lessons learned on hybrid Windows management with Entra Connect, hybrid join, Intune, Autopilot, and MECM Tenant Attach.
 permalink: /articles/lessons-windows-hybrid/
 ---

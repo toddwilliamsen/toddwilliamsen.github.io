@@ -6,7 +6,7 @@ category: field-notes
 diagram: /images/lessons-logging.svg
 summary: Diagnostics, Entra sign-in logs, and M365 unified audit—basic telemetry concepts learned after needing answers that were never collected.
 author: Todd Williamsen
-date: 2026-08-08
+date: 2025-08-08
 description: Lessons learned on Azure diagnostic settings, Entra sign-in logs, and Microsoft 365 unified audit logging for investigations.
 permalink: /articles/lessons-logging-diagnostics/
 ---

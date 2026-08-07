@@ -6,7 +6,7 @@ category: field-notes
 diagram: /images/lessons-conditional-access.svg
 summary: Conditional Access is straightforward on a whiteboard and messy in a tenant—what actually holds for Azure admin portals and Microsoft 365 apps.
 author: Todd Williamsen
-date: 2026-08-04
+date: 2025-08-04
 description: Lessons learned implementing Conditional Access for Microsoft 365 and Azure admin access, including exclusions, device compliance, and break-glass.
 permalink: /articles/lessons-conditional-access/
 ---

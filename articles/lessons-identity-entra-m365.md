@@ -6,7 +6,7 @@ category: field-notes
 diagram: /images/lessons-identity.svg
 summary: Basic identity concepts, learned the hard way—Entra ID as the control plane for Azure, Microsoft 365, and hybrid Windows.
 author: Todd Williamsen
-date: 2026-08-01
+date: 2025-08-01
 description: Lessons learned on Microsoft Entra ID as the shared control plane for Azure, M365, and hybrid Windows environments.
 permalink: /articles/lessons-identity-entra-m365/
 ---
