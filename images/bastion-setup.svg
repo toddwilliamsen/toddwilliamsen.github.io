@@ -8,28 +8,22 @@
     .panel-ink { fill: #101820; }
     .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
     .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
-    .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #f7f9fb; }
     .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
     .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
-    .wire { fill: none; stroke: #101820; stroke-width: 1.4; stroke-opacity: 0.35; }
-    .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; stroke-dasharray: 7 11; animation: viz-flow 2.8s linear infinite; }
+    .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; stroke-dasharray: 7 11; }
     .dot { fill: #9a4e1a; }
-    @keyframes viz-flow { to { stroke-dashoffset: -72; } }
-    @media (prefers-reduced-motion: reduce) {
-      .wire-accent { animation: none; }
-    }
   </style>
 
   <rect class="bg" width="960" height="520"/>
-  <text class="title" x="40" y="44">Azure Bastion  First Lab Path</text>
-  <text class="sub" x="40" y="68">Browser ’ Bastion public IP ’ AzureBastionSubnet ’ private VM (no public IP)</text>
+  <text class="title" x="40" y="44">Azure Bastion - First Lab Path</text>
+  <text class="sub" x="40" y="68">Browser to Bastion public IP to AzureBastionSubnet to private VM (no public IP)</text>
 
   <rect class="panel" x="40" y="110" width="160" height="100" rx="3"/>
   <text class="tiny" x="58" y="140">YOU</text>
   <text class="label" x="58" y="170">Browser</text>
   <text class="sub" x="58" y="192">Portal Connect</text>
 
-  <path class="wire-accent" d="M200 160 H250"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M200 160 H250"/>
   <polygon points="250,152 262,160 250,168" class="dot"/>
 
   <rect class="panel-accent" x="262" y="100" width="200" height="120" rx="3"/>
@@ -38,17 +32,19 @@
   <text class="sub" x="280" y="182">Standard static IP</text>
   <text class="sub" x="280" y="202">SKU Basic / Standard</text>
 
-  <path class="wire-accent" d="M462 160 H520"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M462 160 H520"/>
+  <polygon points="520,152 532,160 520,168" class="dot"/>
 
   <rect class="panel-ink" x="520" y="90" width="400" height="360" rx="3"/>
-  <text class="tiny" x="540" y="120" style="fill:#c5d0dc">VNET  e.g. 10.60.0.0/16</text>
+  <text class="tiny" x="540" y="120" style="fill:#c5d0dc">VNET - e.g. 10.60.0.0/16</text>
 
   <rect class="panel-accent" x="540" y="145" width="360" height="100" rx="3"/>
   <text class="tiny" x="560" y="175">REQUIRED NAME</text>
   <text class="label" x="560" y="205">AzureBastionSubnet</text>
-  <text class="sub" x="560" y="228">/26 or larger  exact spelling</text>
+  <text class="sub" x="560" y="228">/26 or larger - exact spelling</text>
 
-  <path class="wire-accent" d="M720 245 V280"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+  <path class="wire-accent" d="M720 245 V280"/>
+  <polygon points="712,280 720,292 728,280" class="dot"/>
 
   <rect class="panel" x="540" y="280" width="360" height="140" rx="3"/>
   <text class="tiny" x="560" y="310">WORKLOAD</text>
