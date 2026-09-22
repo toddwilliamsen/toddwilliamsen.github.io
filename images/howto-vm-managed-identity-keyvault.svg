@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title">
+  <title id="title">VM managed identity to Key Vault and Storage</title>
+  <style>
+    .bg { fill: #f0f3f7; }
+    .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+    .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+    .panel-ink { fill: #101820; }
+    .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+    .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+    .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+    .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+    .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; stroke-dasharray: 7 11; }
+    .dot { fill: #9a4e1a; }
+  </style>
+
+  <rect class="bg" width="960" height="520"/>
+  <text class="title" x="40" y="44">VM Managed Identity Path</text>
+  <text class="sub" x="40" y="68">System-assigned MI - RBAC to Key Vault and Storage - no keys on disk</text>
+
+  <rect class="panel-accent" x="40" y="140" width="240" height="160" rx="3"/>
+  <text class="tiny" x="58" y="170">COMPUTE</text>
+  <text class="label" x="58" y="200">Linux VM</text>
+  <text class="sub" x="58" y="224">System-assigned MI</text>
+  <text class="sub" x="58" y="246">az login --identity</text>
+  <text class="sub" x="58" y="268">IMDS token locally</text>
+
+  <path class="wire-accent" d="M280 200 H360"/>
+  <polygon points="360,192 372,200 360,208" class="dot"/>
+  <path class="wire-accent" d="M280 260 H360"/>
+  <polygon points="360,252 372,260 360,268" class="dot"/>
+
+  <rect class="panel" x="380" y="110" width="250" height="140" rx="3"/>
+  <text class="tiny" x="398" y="140">KEY VAULT</text>
+  <text class="label" x="398" y="170">Secrets User</text>
+  <text class="sub" x="398" y="194">Read secret values</text>
+  <text class="sub" x="398" y="216">RBAC data plane</text>
+
+  <rect class="panel" x="380" y="280" width="250" height="140" rx="3"/>
+  <text class="tiny" x="398" y="310">STORAGE</text>
+  <text class="label" x="398" y="340">Blob Data Reader</text>
+  <text class="sub" x="398" y="364">auth-mode login</text>
+  <text class="sub" x="398" y="386">No account key</text>
+
+  <rect class="panel-ink" x="680" y="140" width="240" height="280" rx="3"/>
+  <text class="tiny" x="698" y="170" style="fill:#c5d0dc">RESULT</text>
+  <text class="label" x="698" y="210" style="fill:#f0f3f7">No secrets file</text>
+  <text class="sub" x="698" y="240" style="fill:#c5d0dc">Rotate by RBAC</text>
+  <text class="sub" x="698" y="268" style="fill:#c5d0dc">Not by chasing</text>
+  <text class="sub" x="698" y="290" style="fill:#c5d0dc">passwords on disk</text>
+  <text class="sub" x="698" y="330" style="fill:#c5d0dc">Network rules</text>
+  <text class="sub" x="698" y="352" style="fill:#c5d0dc">still required</text>
+</svg>

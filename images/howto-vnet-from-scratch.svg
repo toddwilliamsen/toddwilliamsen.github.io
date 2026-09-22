@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title">
+  <title id="title">Azure VNet subnet layout</title>
+  <style>
+    .bg { fill: #f0f3f7; }
+    .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+    .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+    .panel-ink { fill: #101820; }
+    .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+    .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+    .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+    .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+    .on-ink { fill: #c5d0dc; }
+    .on-ink-label { fill: #f0f3f7; }
+  </style>
+
+  <rect class="bg" width="960" height="520"/>
+  <text class="title" x="40" y="44">VNet the Right Way</text>
+  <text class="sub" x="40" y="68">Address space, job-based subnets, NSG on workload path</text>
+
+  <rect class="panel-ink" x="40" y="100" width="880" height="380" rx="3"/>
+  <text class="tiny on-ink" x="60" y="130">VNET</text>
+  <text class="label on-ink-label" x="60" y="158">vnet-lab - 10.60.0.0/16</text>
+
+  <rect class="panel-accent" x="60" y="190" width="260" height="130" rx="3"/>
+  <text class="tiny" x="78" y="220">BASTION</text>
+  <text class="label" x="78" y="250">AzureBastionSubnet</text>
+  <text class="sub" x="78" y="274">10.60.0.0/26 exact name</text>
+  <text class="sub" x="78" y="296">No workload NICs here</text>
+
+  <rect class="panel" x="350" y="190" width="260" height="130" rx="3"/>
+  <text class="tiny" x="368" y="220">WORKLOAD</text>
+  <text class="label" x="368" y="250">snet-workload</text>
+  <text class="sub" x="368" y="274">10.60.1.0/24</text>
+  <text class="sub" x="368" y="296">NSG attached</text>
+
+  <rect class="panel" x="640" y="190" width="250" height="130" rx="3"/>
+  <text class="tiny" x="658" y="220">PRIVATE LINK</text>
+  <text class="label" x="658" y="250">snet-priv-endpoints</text>
+  <text class="sub" x="658" y="274">10.60.2.0/24</text>
+  <text class="sub" x="658" y="296">Reserve early</text>
+
+  <rect class="panel-accent" x="60" y="350" width="830" height="100" rx="3"/>
+  <text class="tiny" x="78" y="380">PLANNING RULE</text>
+  <text class="label" x="78" y="410">Avoid default 10.0.0.0/16 if peering is likely</text>
+  <text class="sub" x="78" y="432">Leave headroom; document the CIDR once</text>
+</svg>

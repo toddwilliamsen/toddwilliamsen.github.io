@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460" role="img" aria-labelledby="title">
+  <title id="title">App Service Entra sign-in</title>
+  <style>
+    .bg { fill: #f0f3f7; }
+    .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+    .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+    .panel-ink { fill: #101820; }
+    .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 20px; font-weight: 700; fill: #101820; }
+    .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+    .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #f7f9fb; }
+    .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+    .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+    .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; stroke-dasharray: 7 11; }
+    .dot { fill: #9a4e1a; }
+  </style>
+  <rect class="bg" width="960" height="460"/>
+  <text class="title" x="40" y="40">Sign Users Into App Service with Entra</text>
+  <text class="sub" x="40" y="64">Browser to Entra login to redirect URI on App Service (Easy Auth or MSAL)</text>
+
+  <rect class="panel" x="40" y="140" width="160" height="110" rx="3"/>
+  <text class="tiny" x="58" y="170">USER</text>
+  <text class="label" x="58" y="200">Browser</text>
+  <text class="sub" x="58" y="225">Opens site</text>
+
+  <path class="wire-accent" d="M200 195 H250"/>
+  <polygon points="250,187 262,195 250,203" class="dot"/>
+
+  <rect class="panel-accent" x="270" y="120" width="220" height="150" rx="3"/>
+  <text class="tiny" x="290" y="150">APP SERVICE</text>
+  <text class="label" x="290" y="180">Web App</text>
+  <text class="sub" x="290" y="208">Redirect URI host</text>
+  <text class="sub" x="290" y="230">Easy Auth optional</text>
+
+  <path class="wire-accent" d="M490 195 H540"/>
+  <polygon points="540,187 552,195 540,203" class="dot"/>
+
+  <rect class="panel-ink" x="560" y="110" width="360" height="280" rx="3"/>
+  <text class="tiny" x="580" y="140" style="fill:#c5d0dc">ENTRA ID</text>
+  <text class="label-inv" x="580" y="175">App registration</text>
+  <text class="sub" x="580" y="205" style="fill:#c5d0dc">Auth code + ID token</text>
+  <text class="sub" x="580" y="230" style="fill:#c5d0dc">Redirect: https://app.../.auth/login...</text>
+  <text class="sub" x="580" y="268" style="fill:#c5d0dc">Single-tenant for first lab</text>
+  <text class="sub" x="580" y="293" style="fill:#c5d0dc">Least privilege API perms</text>
+</svg>

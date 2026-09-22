@@ -1,8 +1,8 @@
 ---
 layout: article
 title: Azure Bastion from Scratch
-topic: Field Notes
-category: field-notes
+topic: How-To
+category: how-to
 diagram: /images/bastion-setup.svg
 summary: A start-to-finish walkthrough for standing up Azure Bastion the first time—VNet, the special subnet name, public IP, connect to a private VM, and what to tear down when you’re done.
 author: Todd Williamsen

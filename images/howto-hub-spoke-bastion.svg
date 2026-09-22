@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title">
+  <title id="title">Hub and spoke with Bastion</title>
+  <style>
+    .bg { fill: #f0f3f7; }
+    .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+    .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+    .panel-ink { fill: #101820; }
+    .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+    .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+    .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+    .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+    .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; stroke-dasharray: 7 11; }
+    .dot { fill: #9a4e1a; }
+    .on-ink { fill: #c5d0dc; }
+    .on-ink-label { fill: #f0f3f7; }
+  </style>
+
+  <rect class="bg" width="960" height="520"/>
+  <text class="title" x="40" y="44">Hub-and-Spoke + Bastion</text>
+  <text class="sub" x="40" y="68">Bastion in hub - bidirectional peering - private VM in spoke</text>
+
+  <rect class="panel-ink" x="40" y="110" width="420" height="360" rx="3"/>
+  <text class="tiny on-ink" x="60" y="140">HUB VNET 10.60.0.0/16</text>
+
+  <rect class="panel-accent" x="70" y="170" width="360" height="120" rx="3"/>
+  <text class="tiny" x="88" y="200">BASTION</text>
+  <text class="label" x="88" y="230">AzureBastionSubnet /26</text>
+  <text class="sub" x="88" y="254">bas-hub + Standard PIP</text>
+
+  <rect class="panel" x="70" y="320" width="360" height="110" rx="3"/>
+  <text class="tiny" x="88" y="350">OPTIONAL HUB SERVICES</text>
+  <text class="label" x="88" y="380">Firewall / shared DNS later</text>
+  <text class="sub" x="88" y="404">Not required for first lab</text>
+
+  <path class="wire-accent" d="M460 250 H520"/>
+  <polygon points="520,242 532,250 520,258" class="dot"/>
+  <text class="tiny" x="470" y="235">PEER</text>
+
+  <rect class="panel-accent" x="540" y="110" width="380" height="360" rx="3"/>
+  <text class="tiny" x="560" y="140">SPOKE VNET 10.70.0.0/16</text>
+  <text class="label" x="560" y="180">snet-workload</text>
+  <text class="sub" x="560" y="208">vm-spoke1 private IP only</text>
+  <text class="sub" x="560" y="236">NSG allows 22 from 10.60.0.0/26</text>
+  <text class="sub" x="560" y="280">Connect via hub Bastion</text>
+  <text class="sub" x="560" y="308">No public IP on VM</text>
+  <text class="sub" x="560" y="360">Peerings: Connected both ways</text>
+</svg>

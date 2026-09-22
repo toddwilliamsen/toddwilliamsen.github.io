@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460" role="img" aria-labelledby="title">
+  <title id="title">Protect API with Entra token validation</title>
+  <style>
+    .bg { fill: #f0f3f7; }
+    .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+    .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+    .panel-ink { fill: #101820; }
+    .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 20px; font-weight: 700; fill: #101820; }
+    .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+    .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #f7f9fb; }
+    .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+    .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+    .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; stroke-dasharray: 7 11; }
+    .dot { fill: #9a4e1a; }
+  </style>
+  <rect class="bg" width="960" height="460"/>
+  <text class="title" x="40" y="40">Protect an API - Entra Token Validation</text>
+  <text class="sub" x="40" y="64">Bearer token: validate signature, issuer, audience, then scopes or roles</text>
+
+  <rect class="panel" x="40" y="150" width="180" height="120" rx="3"/>
+  <text class="tiny" x="58" y="180">CLIENT</text>
+  <text class="label" x="58" y="210">Authorization</text>
+  <text class="sub" x="58" y="238">Bearer access_token</text>
+
+  <path class="wire-accent" d="M220 210 H270"/>
+  <polygon points="270,202 282,210 270,218" class="dot"/>
+
+  <rect class="panel-accent" x="290" y="110" width="320" height="280" rx="3"/>
+  <text class="tiny" x="310" y="140">YOUR API</text>
+  <text class="label" x="310" y="175">Validate JWT</text>
+  <text class="sub" x="310" y="210">1. Signature (JWKS)</text>
+  <text class="sub" x="310" y="235">2. Issuer (tenant)</text>
+  <text class="sub" x="310" y="260">3. Audience (API)</text>
+  <text class="sub" x="310" y="285">4. Scope / app role</text>
+  <text class="sub" x="310" y="325">Reject on any miss</text>
+
+  <path class="wire-accent" d="M610 220 H660"/>
+  <polygon points="660,212 672,220 660,228" class="dot"/>
+
+  <rect class="panel-ink" x="680" y="140" width="240" height="200" rx="3"/>
+  <text class="tiny" x="700" y="170" style="fill:#c5d0dc">ENTRA</text>
+  <text class="label-inv" x="700" y="205">OpenID metadata</text>
+  <text class="sub" x="700" y="240" style="fill:#c5d0dc">JWKS keys</text>
+  <text class="sub" x="700" y="265" style="fill:#c5d0dc">Issuer URL</text>
+</svg>

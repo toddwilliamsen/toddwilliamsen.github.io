@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title">
+  <title id="title">Defender for Cloud baseline</title>
+  <style>
+    .bg { fill: #f0f3f7; }
+    .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+    .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+    .panel-ink { fill: #101820; }
+    .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+    .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+    .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+    .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+    .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; stroke-dasharray: 7 11; }
+    .dot { fill: #9a4e1a; }
+  </style>
+
+  <rect class="bg" width="960" height="520"/>
+  <text class="title" x="40" y="44">Defender for Cloud Baseline</text>
+  <text class="sub" x="40" y="68">Plans on - Secure Score - triage fixes and timed exemptions</text>
+
+  <rect class="panel" x="40" y="140" width="220" height="150" rx="3"/>
+  <text class="tiny" x="58" y="170">PLANS</text>
+  <text class="label" x="58" y="200">CSPM / posture</text>
+  <text class="sub" x="58" y="224">Add paid plans</text>
+  <text class="sub" x="58" y="246">with intent only</text>
+
+  <path class="wire-accent" d="M260 215 H320"/>
+  <polygon points="320,207 332,215 320,223" class="dot"/>
+
+  <rect class="panel-accent" x="340" y="140" width="240" height="150" rx="3"/>
+  <text class="tiny" x="358" y="170">SECURE SCORE</text>
+  <text class="label" x="358" y="200">Ranked work</text>
+  <text class="sub" x="358" y="224">Impact + unhealthy</text>
+  <text class="sub" x="358" y="246">resources list</text>
+
+  <path class="wire-accent" d="M580 215 H640"/>
+  <polygon points="640,207 652,215 640,223" class="dot"/>
+
+  <rect class="panel-ink" x="660" y="140" width="260" height="150" rx="3"/>
+  <text class="tiny" x="678" y="170" style="fill:#c5d0dc">TRIAGE</text>
+  <text class="label" x="678" y="200" style="fill:#f0f3f7">Fix / exempt / defer</text>
+  <text class="sub" x="678" y="224" style="fill:#c5d0dc">Owner + expiry</text>
+  <text class="sub" x="678" y="246" style="fill:#c5d0dc">Prefer IaC fixes</text>
+
+  <rect class="panel" x="40" y="340" width="880" height="120" rx="3"/>
+  <text class="tiny" x="58" y="370">COST GUARD</text>
+  <text class="label" x="58" y="400">Read the price column before enabling Servers, Storage, SQL, Containers</text>
+  <text class="sub" x="58" y="428">Posture recommendations first - paid protections when the workload justifies them</text>
+</svg>

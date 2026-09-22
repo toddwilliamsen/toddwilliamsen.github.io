@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460" role="img" aria-labelledby="title">
+  <title id="title">Conditional Access for apps</title>
+  <style>
+    .bg { fill: #f0f3f7; }
+    .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+    .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+    .panel-ink { fill: #101820; }
+    .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 20px; font-weight: 700; fill: #101820; }
+    .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+    .label-inv { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #f7f9fb; }
+    .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+    .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+    .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; stroke-dasharray: 7 11; }
+    .dot { fill: #9a4e1a; }
+  </style>
+  <rect class="bg" width="960" height="460"/>
+  <text class="title" x="40" y="40">Conditional Access Policies for Your App</text>
+  <text class="sub" x="40" y="64">Assign CA to the enterprise app - MFA, device, location before tokens issue</text>
+
+  <rect class="panel" x="40" y="150" width="180" height="120" rx="3"/>
+  <text class="tiny" x="58" y="180">USER</text>
+  <text class="label" x="58" y="210">Sign-in attempt</text>
+  <text class="sub" x="58" y="238">To your app</text>
+
+  <path class="wire-accent" d="M220 210 H270"/>
+  <polygon points="270,202 282,210 270,218" class="dot"/>
+
+  <rect class="panel-ink" x="290" y="110" width="340" height="280" rx="3"/>
+  <text class="tiny" x="310" y="140" style="fill:#c5d0dc">CONDITIONAL ACCESS</text>
+  <text class="label-inv" x="310" y="175">Policy gate</text>
+  <text class="sub" x="310" y="210" style="fill:#c5d0dc">Users / groups</text>
+  <text class="sub" x="310" y="235" style="fill:#c5d0dc">Cloud apps = your SP</text>
+  <text class="sub" x="310" y="260" style="fill:#c5d0dc">Grant: MFA / compliant</text>
+  <text class="sub" x="310" y="300" style="fill:#c5d0dc">Session controls</text>
+  <text class="sub" x="310" y="325" style="fill:#c5d0dc">Report-only first</text>
+
+  <path class="wire-accent" d="M630 220 H680"/>
+  <polygon points="680,212 692,220 680,228" class="dot"/>
+
+  <rect class="panel-accent" x="700" y="150" width="220" height="160" rx="3"/>
+  <text class="tiny" x="720" y="180">RESULT</text>
+  <text class="label" x="720" y="210">Token issued</text>
+  <text class="sub" x="720" y="240">or blocked</text>
+  <text class="sub" x="720" y="265">Then app loads</text>
+</svg>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title">
+  <title id="title">PIM for Azure RBAC</title>
+  <style>
+    .bg { fill: #f0f3f7; }
+    .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+    .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+    .panel-ink { fill: #101820; }
+    .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 22px; font-weight: 700; fill: #101820; }
+    .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 13px; font-weight: 700; fill: #101820; }
+    .sub { font-family: Source Serif 4, Georgia, serif; font-size: 12px; fill: #3d4a5c; }
+    .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 11px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+    .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.8; stroke-dasharray: 7 11; }
+    .dot { fill: #9a4e1a; }
+  </style>
+
+  <rect class="bg" width="960" height="520"/>
+  <text class="title" x="40" y="44">PIM for Azure RBAC</text>
+  <text class="sub" x="40" y="68">Eligible role - MFA activation - time-boxed privilege - audit</text>
+
+  <rect class="panel" x="40" y="140" width="220" height="140" rx="3"/>
+  <text class="tiny" x="58" y="170">DEFAULT STATE</text>
+  <text class="label" x="58" y="200">Eligible only</text>
+  <text class="sub" x="58" y="224">No standing Owner</text>
+  <text class="sub" x="58" y="246">Contributor eligible</text>
+
+  <path class="wire-accent" d="M260 210 H320"/>
+  <polygon points="320,202 332,210 320,218" class="dot"/>
+
+  <rect class="panel-accent" x="340" y="140" width="240" height="140" rx="3"/>
+  <text class="tiny" x="358" y="170">ACTIVATE</text>
+  <text class="label" x="358" y="200">MFA + reason</text>
+  <text class="sub" x="358" y="224">Max duration e.g. 8h</text>
+  <text class="sub" x="358" y="246">Optional approval</text>
+
+  <path class="wire-accent" d="M580 210 H640"/>
+  <polygon points="640,202 652,210 640,218" class="dot"/>
+
+  <rect class="panel-ink" x="660" y="140" width="260" height="140" rx="3"/>
+  <text class="tiny" x="678" y="170" style="fill:#c5d0dc">ACTIVE WINDOW</text>
+  <text class="label" x="678" y="200" style="fill:#f0f3f7">Do the work</text>
+  <text class="sub" x="678" y="224" style="fill:#c5d0dc">Then auto-expire</text>
+  <text class="sub" x="678" y="246" style="fill:#c5d0dc">Audit the activation</text>
+
+  <rect class="panel-accent" x="40" y="330" width="880" height="120" rx="3"/>
+  <text class="tiny" x="58" y="360">CRITICAL CLEANUP</text>
+  <text class="label" x="58" y="390">Remove permanent IAM assignments after PIM eligibility exists</text>
+  <text class="sub" x="58" y="420">Eligible + standing = still standing privilege</text>
+</svg>
