@@ -1,0 +1,101 @@
+# Sample: GitHub Actions security gates (PR + main).
+# Copy to .github/workflows/security-gates.yml and adjust paths/thresholds.
+# Pair deploy with OIDC (see articles/github-actions-oidc-azure).
+
+name: Security gates
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+  pull-requests: write
+
+jobs:
+  secret-and-sast:
+    name: Secrets + SAST
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript, python
+          # Add csharp, java, go, etc. as needed
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Analyze (SAST)
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:multi"
+
+  sca-and-iac:
+    name: SCA + IaC
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Dependency Review (PRs)
+        if: github.event_name == 'pull_request'
+        uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: true
+          # Block merge when introduced deps have Critical/High CVEs
+
+      - name: Scan IaC and containers (Trivy)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          severity: CRITICAL,HIGH
+          exit-code: "1"
+          ignore-unfixed: true
+
+  # Optional: Microsoft Security DevOps (MSDO) unified scanners
+  # Uncomment when the Microsoft Security DevOps GitHub Action fits your stack.
+  # msdo:
+  #   name: Microsoft Security DevOps
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: microsoft/security-devops-action@v1
+  #       id: msdo
+  #     - name: Upload SARIF
+  #       uses: github/codeql-action/upload-sarif@v3
+  #       with:
+  #         sarif_file: ${{ steps.msdo.outputs.sarifFile }}
+
+  deploy-gated:
+    name: Deploy (gated)
+    needs: [secret-and-sast, sca-and-iac]
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Deploy only after gates pass
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            echo "Gates passed — deploy job runs under short-lived OIDC identity"
+            # az deployment group create ...

@@ -1,0 +1,97 @@
+# Sample: Azure DevOps YAML with Microsoft Security DevOps + environment gates.
+# Prerequisites:
+# 1. Install "Microsoft Security DevOps" from the Visual Studio Marketplace.
+# 2. Create Environments (e.g. production) with Approvals and Checks:
+#    - Check Azure Policy compliance
+#    - Query Azure Monitor alerts (Defender)
+#    - Optional: Invoke REST API / Azure Function
+#    - Manual approval from Security Champions
+# 3. Wire a service connection with least privilege (prefer federated / OIDC).
+
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+stages:
+  - stage: BuildAndScan
+    displayName: Build and security scan
+    jobs:
+      - job: Scan
+        displayName: MSDO + fail on Critical/High
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+          - checkout: self
+
+          - task: MicrosoftSecurityDevOps@1
+            displayName: Microsoft Security DevOps
+            inputs:
+              categories: "code,artifacts,IaC,containers"
+              # Produces SARIF for Advanced Security / Defender for DevOps
+
+          - task: Bash@3
+            displayName: Fail closed on Critical/High SARIF findings
+            inputs:
+              targetType: inline
+              script: |
+                set -euo pipefail
+                SARIF="$(find "$(Agent.TempDirectory)" "$(Build.SourcesDirectory)" -name '*.sarif' 2>/dev/null | head -1 || true)"
+                if [ -z "${SARIF}" ]; then
+                  echo "No SARIF found — fail closed for production pipelines"
+                  exit 1
+                fi
+                echo "Parsing ${SARIF}"
+                python3 - "$SARIF" <<'PY'
+                import json, sys
+                path = sys.argv[1]
+                with open(path, encoding="utf-8") as f:
+                    data = json.load(f)
+                bad = 0
+                for run in data.get("runs", []):
+                    for r in run.get("results", []):
+                        level = (r.get("level") or "").lower()
+                        props = r.get("properties") or {}
+                        sev = str(
+                            props.get("severity")
+                            or props.get("security-severity")
+                            or level
+                        ).lower()
+                        if sev in ("error", "critical", "high") or level == "error":
+                            bad += 1
+                            msg = (r.get("message") or {}).get("text", "")[:120]
+                            print(f"BLOCK: {r.get('ruleId')} level={level} sev={sev} {msg}")
+                if bad:
+                    print(f"Failing build: {bad} Critical/High finding(s)")
+                    sys.exit(1)
+                print("No Critical/High findings — continue")
+                PY
+
+  - stage: Deploy
+    displayName: Deploy (environment gates)
+    dependsOn: BuildAndScan
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    jobs:
+      - deployment: Production
+        displayName: Production deploy
+        environment: production
+        # Environment Approvals and Checks enforce Policy / Monitor / manual security sign-off
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                - task: AzureCLI@2
+                  displayName: Deploy after environment checks
+                  inputs:
+                    azureSubscription: $(azureServiceConnection)
+                    scriptType: bash
+                    scriptLocation: inlineScript
+                    inlineScript: |
+                      echo "Environment checks passed — deploy under pipeline identity"
+                      # az deployment group create ...
