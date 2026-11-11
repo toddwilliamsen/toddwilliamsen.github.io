@@ -31,7 +31,7 @@
   <rect class="panel" x="40" y="140" width="200" height="140" rx="3"/>
   <text class="tiny" x="58" y="175">PIPELINE</text>
   <text class="label" x="58" y="210">Build + scan</text>
-  <text class="sub" x="58" y="240">SAST · SCA · IaC</text>
+  <text class="sub" x="58" y="240">SAST - SCA - IaC</text>
 
   <path class="wire-accent" d="M240 210 H300"/>
   <polygon points="300,202 312,210 300,218" class="dot"/>
@@ -39,9 +39,9 @@
   <rect class="panel-accent" x="320" y="120" width="260" height="180" rx="3"/>
   <text class="tiny" x="338" y="155">GATE</text>
   <text class="label" x="338" y="190">Severity threshold</text>
-  <text class="sub" x="338" y="220">Critical / High ’ fail</text>
-  <text class="sub" x="338" y="245">Policy / alerts ’ fail</text>
-  <text class="sub" x="338" y="270">Pass ’ continue</text>
+  <text class="sub" x="338" y="220">Critical / High -> fail</text>
+  <text class="sub" x="338" y="245">Policy / alerts -> fail</text>
+  <text class="sub" x="338" y="270">Pass -> continue</text>
 
   <path class="wire" d="M580 160 H640"/>
   <path class="wire-accent" d="M580 260 H640"/>

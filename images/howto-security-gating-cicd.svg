@@ -34,11 +34,11 @@
 
   <rect class="bg" width="960" height="560"/>
   <text class="title" x="40" y="40">Security gating CI/CD</text>
-  <text class="sub" x="40" y="64">Four stages of automated checkpointsfail closed before production</text>
+  <text class="sub" x="40" y="64">Four stages of automated checkpoints - fail closed before production</text>
 
   <!-- Stage 1 -->
   <rect class="panel" x="40" y="110" width="200" height="200" rx="3"/>
-  <text class="tiny" x="58" y="140">1 · PRE-MERGE</text>
+  <text class="tiny" x="58" y="140">1 - PRE-MERGE</text>
   <text class="label" x="58" y="168">Source gates</text>
   <text class="sub" x="58" y="196">Branch policies</text>
   <text class="sub" x="58" y="218">Secret scanning</text>
@@ -50,7 +50,7 @@
 
   <!-- Stage 2 -->
   <rect class="panel-accent" x="290" y="110" width="200" height="200" rx="3"/>
-  <text class="tiny" x="308" y="140">2 · BUILD / CI</text>
+  <text class="tiny" x="308" y="140">2 - BUILD / CI</text>
   <text class="label" x="308" y="168">Artifact gates</text>
   <text class="sub" x="308" y="196">SCA / CVEs</text>
   <text class="sub" x="308" y="218">Container + IaC</text>
@@ -62,7 +62,7 @@
 
   <!-- Stage 3 -->
   <rect class="panel" x="540" y="110" width="200" height="200" rx="3"/>
-  <text class="tiny" x="558" y="140">3 · RELEASE / CD</text>
+  <text class="tiny" x="558" y="140">3 - RELEASE / CD</text>
   <text class="label" x="558" y="168">Deploy gates</text>
   <text class="sub" x="558" y="196">Policy compliance</text>
   <text class="sub" x="558" y="218">Defender alerts</text>
@@ -74,7 +74,7 @@
 
   <!-- Stage 4 -->
   <rect class="panel-ink" x="790" y="110" width="130" height="200" rx="3"/>
-  <text class="tiny" x="808" y="140" style="fill:#c5d0dc">4 · RUNTIME</text>
+  <text class="tiny" x="808" y="140" style="fill:#c5d0dc">4 - RUNTIME</text>
   <text class="label-inv" x="808" y="175">Admission</text>
   <text class="sub" x="808" y="210" style="fill:#c5d0dc">AKS / OPA</text>
   <text class="sub" x="808" y="232" style="fill:#c5d0dc">Unsigned</text>
@@ -84,6 +84,6 @@
   <rect class="panel" x="40" y="360" width="880" height="150" rx="3"/>
   <text class="tiny" x="58" y="395">FAIL CLOSED</text>
   <text class="label" x="58" y="425">Warn-only gates teach; enforce gates protect</text>
-  <text class="sub" x="58" y="455">Critical and High findings exit 1 · Environment checks pause deploy · Admission rejects out-of-band</text>
+  <text class="sub" x="58" y="455">Critical and High findings exit 1 - Environment checks pause deploy - Admission rejects out-of-band</text>
   <text class="sub" x="58" y="480">Pair with OIDC deploy so the pipeline identity is short-lived and scoped</text>
 </svg>
