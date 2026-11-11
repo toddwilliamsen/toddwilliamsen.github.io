@@ -19,7 +19,7 @@ Not a tool checklist for its own sake. Checkpoints that **fail closed**—vulner
 Depending on whether you use **Azure DevOps** or **GitHub Actions** against Azure, I would enforce gates at four stages.
 
 <figure>
-  <img src="{{ '/images/howto-security-gating-cicd.svg' | relative_url }}" alt="Four CI/CD stages with security gates from pre-merge through runtime admission">
+  <img src="{{ '/images/howto-security-gating-cicd.svg' | relative_url }}?v=3" alt="Four CI/CD stages with security gates from pre-merge through runtime admission">
   <figcaption>Figure 1. Pre-merge, build, release, and runtime—each stage can stop the train.</figcaption>
 </figure>
 
@@ -50,7 +50,7 @@ During the build, verify dependencies and images meet a baseline **before** you 
 - **Artifact signing:** Sign verified images with Notation or Cosign and push to **Azure Container Registry** so later environments only pull trusted digests.
 
 <figure>
-  <img src="{{ '/images/howto-security-gating-fail-closed.svg' | relative_url }}" alt="Scan results evaluated at a severity gate that either blocks deploy or allows OIDC deploy">
+  <img src="{{ '/images/howto-security-gating-fail-closed.svg' | relative_url }}?v=3" alt="Scan results evaluated at a severity gate that either blocks deploy or allows OIDC deploy">
   <figcaption>Figure 2. Warn-only is research. Exit 1 on Critical/High is a gate.</figcaption>
 </figure>
 
