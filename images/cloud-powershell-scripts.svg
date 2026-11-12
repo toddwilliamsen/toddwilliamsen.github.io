@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-labelledby="title">
+  <title id="title">cloud-powershell script folders</title>
+
+<style>
+  .bg { fill: #f0f3f7; }
+  .panel { fill: #f7f9fb; stroke: #101820; stroke-width: 1.5; stroke-opacity: 0.35; }
+  .panel-accent { fill: #f7f9fb; stroke: #9a4e1a; stroke-width: 2; }
+  .title { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 20px; font-weight: 700; fill: #101820; }
+  .label { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #101820; }
+  .sub { font-family: Source Serif 4, Georgia, serif; font-size: 11px; fill: #3d4a5c; }
+  .tiny { font-family: Syne, Avenir Next, Segoe UI, sans-serif; font-size: 10px; font-weight: 600; fill: #6b7a8d; letter-spacing: 0.06em; }
+  .wire { fill: none; stroke: #101820; stroke-width: 1.3; stroke-opacity: 0.3; }
+  .wire-accent { fill: none; stroke: #9a4e1a; stroke-width: 1.7; }
+
+  .wire-accent, .flow {
+    stroke-dasharray: 7 11;
+    animation: viz-flow 2.8s linear infinite;
+  }
+  .wire {
+    stroke-dasharray: 3 9;
+    animation: viz-flow 9s linear infinite;
+  }
+  .panel-accent, .dot, .node-pulse {
+    animation: viz-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes viz-flow {
+    to { stroke-dashoffset: -72; }
+  }
+  @keyframes viz-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wire-accent, .flow, .wire, .panel-accent, .dot, .node-pulse { animation: none; }
+  }
+
+</style>
+
+  <rect class="bg" width="960" height="400"/>
+
+  <text class="title" x="40" y="44">cloud-powershell: operator aids, not runbooks</text>
+  <text class="sub" x="40" y="68">Troubleshoot the break, build the lab, secure the posture—then verify with Graph and Az.</text>
+
+  <rect class="panel" x="40" y="110" width="280" height="220" rx="3"/>
+  <text class="tiny" x="60" y="145">TROUBLESHOOT</text>
+  <text class="label" x="60" y="180">Find what broke</text>
+  <text class="sub" x="60" y="210">Hybrid join health</text>
+  <text class="sub" x="60" y="238">Entra sign-in failures</text>
+  <text class="sub" x="60" y="266">Diagnostics gaps</text>
+  <text class="sub" x="60" y="294">M365 audit / Intune</text>
+
+  <path class="wire-accent" d="M320 220 H360"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+
+  <rect class="panel" x="360" y="110" width="240" height="220" rx="3"/>
+  <text class="tiny" x="380" y="145">BUILD</text>
+  <text class="label" x="380" y="180">Stand up labs</text>
+  <text class="sub" x="380" y="210">Tagged resource groups</text>
+  <text class="sub" x="380" y="238">ARM validate + what-if</text>
+  <text class="sub" x="380" y="266">App registrations</text>
+  <text class="sub" x="380" y="294">No secrets in output</text>
+
+  <path class="wire-accent" d="M600 220 H640"><animate attributeName="stroke-dashoffset" values="0;-72" dur="2.8s" repeatCount="indefinite"/></path>
+
+  <rect class="panel-accent" x="640" y="110" width="280" height="220" rx="3"/>
+  <text class="tiny" x="660" y="145">SECURE</text>
+  <text class="label" x="660" y="180">Harden and review</text>
+  <text class="sub" x="660" y="210">Diagnostics enablement</text>
+  <text class="sub" x="660" y="238">Storage baseline</text>
+  <text class="sub" x="660" y="266">Standing RBAC / PIM</text>
+  <text class="sub" x="660" y="294">CA exclusions inventory</text>
+
+</svg>
